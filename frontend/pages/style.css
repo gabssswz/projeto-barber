@@ -1,18 +1,4 @@
-@charset "UTF-8";
-
-* {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* ELEMENTOS DA INTERFACE */
-
-body {
+body{
     background-color: #101010;
-}
-
-header > h1 {
-    color: white;
-}
-header > h2{
     color: #f97316;
 }
