@@ -17,7 +17,7 @@ function initMap(){
         content: '<h1> Elite Barbearia </h1>'
     })
 
-    marker.addListener('click', () => {
+    marker.addListener('click', function() {
         infoWindow.open(map,marker)
     })
 }
