@@ -138,6 +138,10 @@ section h2 {
 #local h3 {
     text-align: left;
 }
+#map {
+    height: 400px;
+    width: 30%;
+}
 
 /* Cards conceituais (Missão, Visão, Valores) - centralizado */
 .about-card {
@@ -256,8 +260,3 @@ footer > small {
     footer > img {
         max-width: 100px;
     }
-
-#map {
-    height: 400px;
-    width: 30%;
-}
