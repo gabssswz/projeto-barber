@@ -28,3 +28,9 @@ header {
 .logo-nav {
     width: 100px;
 }
+
+
+#map {
+    height: 400px;
+    width: 30%;
+}
