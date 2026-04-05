@@ -12,6 +12,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding: 60px;
 }
 
 body{
@@ -58,8 +59,18 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 8px 10px;
-    background-color: var(--cor-black)
+    background-color: var(--cor-black);
+    position: fixed;
+    width: 100%; 
+    z-index: 1000;
+    top: 0; 
+    left: 0; 
 }
+
+main {
+    margin-top: 150px;
+}
+
 .menu {
     list-style: none;
 }
@@ -87,7 +98,7 @@ header {
     display: block;
     margin: auto;
     margin-bottom: 1rem;
-    width: 120px;
+    width: 200px;
 }
 
 /* Hero Section - Centralizado para impacto máximo */
