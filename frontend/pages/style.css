@@ -10,6 +10,10 @@
     height: auto;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--cor-black);
     color: var(--cor-white);
