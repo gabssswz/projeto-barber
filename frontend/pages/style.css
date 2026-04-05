@@ -1,26 +1,32 @@
 @charset "UTF-8";
 
+:root {
+    --cor-laranja: #f97316;
+    --cor-white: #ffffff;
+    --cor-black: #101010;
+}
+
 * {       /*Configs globais*/
     height: auto;
 }
 
 body{
-    background-color: #101010;
-    color: #ffffff;
+    background-color: var(--cor-black);
+    color: var(--cor-white);
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
 h1,h2{
     font-family: 'Bebas Neue', sans-serif;
-    color: #ffffff;
+    color: var(--cor-white);
     text-align: center;
 }
 
 h3,h4{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color:#ffffff;
+    color:var(--cor-white);
 
 }
 
@@ -29,7 +35,7 @@ p {
 }
 
 .highlight {
-    color: #f97316;
+    color: var(--cor-laranja);
 }
 
 .secondary-text {
@@ -39,8 +45,8 @@ p {
 .btn-agendar, .btn-cortes{
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    color: #101010;
-    background-color: #f97316;
+    color: var(--cor-black);
+    background-color: var(var(--cor-laranja));
 }
 
 header {
@@ -48,7 +54,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 8px 10px;
-    background-color: #101010;
+    background-color: var(--cor-black)
 }
 .menu {
     list-style: none;
@@ -60,13 +66,13 @@ header {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 25px;
-    color: #ffffff;
+    color: var(--cor-white);
     text-decoration: none;
     
 }
 
 .menu a:hover {
-    color: #f97316;
+    color: var(--cor-laranja);
 }
 
 .logo-nav {
@@ -103,7 +109,7 @@ header {
 
 .card {
     background-color: #1a1a1a;
-    color: #ffffff;
+    color: var(--cor-white);
 }
 
 .links a {
@@ -113,7 +119,7 @@ header {
 }
 
 .links a:hover {
-    color: #f97316;
+    color: var(--cor-laranja);
 }
 
 /* Barra decorativa entre títulos de seção */
@@ -121,7 +127,7 @@ header {
     display: block;
     width: 100px;
     height: 4px;
-    background-color: #f97316;
+    background-color: var(--cor-laranja);
     margin: 1rem auto 2rem auto;
 }
 
@@ -223,14 +229,14 @@ footer li {
     height: 40px;
     border-radius: 50%;
     background-color: rgba(249, 115, 22, 0.1);
-    color: #f97316;
+    color: var(--cor-laranja);
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
 .social-icons a:hover {
-    background-color: #f97316;
-    color: #101010;
+    background-color: var(--cor-laranja);
+    color: var(--cor-black);
     transform: scale(1.1);
 }
 
