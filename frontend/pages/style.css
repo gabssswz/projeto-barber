@@ -122,9 +122,52 @@ main {
     }
 }
 
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
 .card {
     background-color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.411);
+    padding: 20px;
+    border: 1px solid var(--cor-laranja);
+    border-radius: 5px;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0%;
+}
+
+.card ul li i {
+    color: var(--cor-laranja);
+    margin-right: 8px;
+}
+
+.card>h3 {
+    text-align:center;
+    font-size:x-large;
+    color: var(--cor-laranja);
+    margin: 0%;
+}
+
+.card-preco {
     color: var(--cor-white);
+    text-align: center;
+    font-size: xx-large;
+    margin: 0%;
+}
+
+.card-preco small {
+    font-size: small;
+    color: rgba(255, 255, 255, 0.411);
+}
+
+.card-resumo {
+    text-align: center;
+    margin: 0%;
 }
 
 .links a {
@@ -157,7 +200,7 @@ section h2 {
 #planos h3,
 #contato h3,
 #local h3 {
-    text-align: left;
+    text-align: center;
 }
 #map {
     height: 400px;
