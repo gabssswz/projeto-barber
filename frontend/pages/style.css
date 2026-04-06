@@ -221,34 +221,30 @@ section h2 {
 /* ===== FOOTER - FASE 7 ===== */
 footer {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
     background-color: #050505;
 }
-
-/* Coluna no footer (logo/desc, links rápidos, horários) */
-footer > div,
-footer > img,
-footer > h4 {
-    flex: 1;
-    min-width: 250px;
-    text-align: left;
-}
-
-/* Logo no footer */
-footer > img {
+/*Logo do footer*/
+footer .brand img {
     max-width: 120px;
     height: auto;
     flex: 0 1 auto;
 }
 
 /* Descrição no footer */
-footer > h4 {
-    flex: 1 1 100%;
+footer .brand {
+    flex: 1;
+    max-width: 22%;
+}
+
+/* Coluna no footer (logo/desc, links rápidos, horários) */
+footer > div {
+    flex: 1;
+    max-width: 25%;
     text-align: left;
-    margin: 0;
-    margin-top: -1rem;
 }
 
 /* Títulos H3 no footer */
@@ -301,6 +297,7 @@ footer li {
 /* Copyright - centralizado no rodapé */
 footer > small {
     flex: 1 1 100%;
+    width: 100%;
     text-align: center;
     margin-top: 2rem;
     padding-top: 2rem;
