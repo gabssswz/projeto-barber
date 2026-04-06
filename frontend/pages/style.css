@@ -61,12 +61,16 @@ header {
     align-items: center;
     padding: 8px 10px;
     background-color: var(--cor-black);
+    box-shadow: 0 0 0 rgb(255,140,0,0);
     position: fixed;
     width: 100%; 
     z-index: 1000;
     top: 0; 
     left: 0; 
+    position: fixed;
+    overflow: hidden;
 }
+
 
 main {
     margin-top: 150px;
@@ -127,6 +131,7 @@ main {
     display: flex;
     justify-content: center;
     gap: 25px;
+    perspective: 1000px;
 }
 
 .card {
@@ -136,22 +141,39 @@ main {
     padding: 20px;
     border: 1px solid var(--cor-laranja);
     border-radius: 5px;
-    transition: box-shadow 0.4s ease-in-out;
+    opacity: 0;
+    transition:box-shadow 0.4s ease-in-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
 }
 
 .card:hover {
        box-shadow: 0 0 15px 4px var(--cor-laranja);
 }
 
+.glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255,140,0,0.4), transparent);
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
 
 .card ul {
     list-style: none;
     padding-left: 0%;
+    cursor: default;
 }
 
 .card ul li i {
     color: var(--cor-laranja);
     margin-right: 8px;
+    cursor: default;
 }
 
 .card>h3 {
@@ -159,6 +181,7 @@ main {
     font-size:x-large;
     color: var(--cor-laranja);
     margin: 0%;
+    cursor: default;
 }
 
 .card-preco {
@@ -166,16 +189,19 @@ main {
     text-align: center;
     font-size: xx-large;
     margin: 0%;
+    cursor: default;
 }
 
 .card-preco small {
     font-size: small;
     color: rgba(255, 255, 255, 0.411);
+    cursor: default;
 }
 
 .card-resumo {
     text-align: center;
     margin: 0%;
+    cursor: default;
 }
 
 .links a {
