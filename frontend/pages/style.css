@@ -10,11 +10,17 @@
     height: auto;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 60px;
+}
+
 body{
     background-color: var(--cor-black);
     color: var(--cor-white);
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    perspective: 1200;
 }
 
 h1,h2{
@@ -54,8 +60,22 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 8px 10px;
-    background-color: var(--cor-black)
+    background-color: var(--cor-black);
+    box-shadow: 0 0 0 rgb(255,140,0,0);
+    position: fixed;
+    width: 100%; 
+    z-index: 1000;
+    top: 0; 
+    left: 0; 
+    position: fixed;
+    overflow: hidden;
 }
+
+
+main {
+    margin-top: 150px;
+}
+
 .menu {
     list-style: none;
 }
@@ -83,7 +103,7 @@ header {
     display: block;
     margin: auto;
     margin-bottom: 1rem;
-    width: 120px;
+    width: 200px;
 }
 
 /* Hero Section - Centralizado para impacto máximo */
@@ -107,9 +127,81 @@ header {
     }
 }
 
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    perspective: 1000px;
+}
+
 .card {
     background-color: #1a1a1a;
+    backdrop-filter: blur(25px);
+    color: rgba(255, 255, 255, 0.411);
+    padding: 20px;
+    border: 1px solid var(--cor-laranja);
+    border-radius: 5px;
+    opacity: 0;
+    transition:box-shadow 0.4s ease-in-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
+}
+
+.card:hover {
+       box-shadow: 0 0 15px 4px var(--cor-laranja);
+}
+
+.glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255,140,0,0.4), transparent);
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0%;
+    cursor: default;
+}
+
+.card ul li i {
+    color: var(--cor-laranja);
+    margin-right: 8px;
+    cursor: default;
+}
+
+.card>h3 {
+    text-align:center;
+    font-size:x-large;
+    color: var(--cor-laranja);
+    margin: 0%;
+    cursor: default;
+}
+
+.card-preco {
     color: var(--cor-white);
+    text-align: center;
+    font-size: xx-large;
+    margin: 0%;
+    cursor: default;
+}
+
+.card-preco small {
+    font-size: small;
+    color: rgba(255, 255, 255, 0.411);
+    cursor: default;
+}
+
+.card-resumo {
+    text-align: center;
+    margin: 0%;
+    cursor: default;
 }
 
 .links a {
@@ -142,7 +234,7 @@ section h2 {
 #planos h3,
 #contato h3,
 #local h3 {
-    text-align: left;
+    text-align: center;
 }
 #map {
     height: 400px;
@@ -163,34 +255,30 @@ section h2 {
 /* ===== FOOTER - FASE 7 ===== */
 footer {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
     background-color: #050505;
 }
-
-/* Coluna no footer (logo/desc, links rápidos, horários) */
-footer > div,
-footer > img,
-footer > h4 {
-    flex: 1;
-    min-width: 250px;
-    text-align: left;
-}
-
-/* Logo no footer */
-footer > img {
+/*Logo do footer*/
+footer .brand img {
     max-width: 120px;
     height: auto;
     flex: 0 1 auto;
 }
 
 /* Descrição no footer */
-footer > h4 {
-    flex: 1 1 100%;
+footer .brand {
+    flex: 1;
+    max-width: 22%;
+}
+
+/* Coluna no footer (logo/desc, links rápidos, horários) */
+footer > div {
+    flex: 1;
+    max-width: 25%;
     text-align: left;
-    margin: 0;
-    margin-top: -1rem;
 }
 
 /* Títulos H3 no footer */
@@ -243,6 +331,7 @@ footer li {
 /* Copyright - centralizado no rodapé */
 footer > small {
     flex: 1 1 100%;
+    width: 100%;
     text-align: center;
     margin-top: 2rem;
     padding-top: 2rem;
