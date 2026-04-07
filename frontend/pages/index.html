@@ -19,8 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,20０;1,3００;1,4００;1,5００;1,6００;1,7００;1,8００;1,9００&display=swap" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_CCCThNFuY8dr9tDe_7gvK68c2QXKF4I"></script>
-</head>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_CCCThNFuY8dr9tDe_7gvK68c2QXKF4I"></script>    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script></head>
 <body>
     <header>
         <img src="Imagens/Logo_sem_fundo.png" alt="Logo da Elite" class="logo-nav">
@@ -44,20 +43,35 @@
                 <a href="#cortes" class="btn-cortes">cortes</a>
             </div>
         </section>
-        <section id="sobre">
-            <h2>Sobre a Elite</h2>
-            <div class="section-divider"></div>
-            <div class="about-card">
-                <h3>Missão</h3>
-                <p class="secondary-text">Oferecer serviços de excelência com técnicas modernas e atendimento diferenciado para homens que buscam qualidade.</p>
-            </div>
-            <div class="about-card">
-                <h3>Visão</h3>
-                <p class="secondary-text">Ser referência em estilo masculino, reconhecida pela modernidade e alto padrão de qualidade.</p>
-            </div>
-            <div class="about-card">
-                <h3>Valores</h3>
-                <p class="secondary-text">Modernidade, exclusividade, profissionalismo e compromisso com a satisfação do cliente.</p>
+        <section id="sobre" class="sobre-section">
+            <div class="sobre-wrapper">
+                <div class="sobre-header">
+                    <h2>Sobre a Elite</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="cards-grid">
+                    <div class="about-card">
+                        <div class="card-content">
+                            <i data-lucide="target" class="card-icon"></i>
+                            <h3>Missão</h3>
+                            <p>Oferecer serviços de excelência com técnicas modernas e atendimento diferenciado para homens que buscam qualidade.</p>
+                        </div>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-content">
+                            <i data-lucide="eye" class="card-icon"></i>
+                            <h3>Visão</h3>
+                            <p>Ser referência em estilo masculino, reconhecida pela modernidade e alto padrão de qualidade.</p>
+                        </div>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-content">
+                            <i data-lucide="award" class="card-icon"></i>
+                            <h3>Valores</h3>
+                            <p>Modernidade, exclusividade, profissionalismo e compromisso com a satisfação do cliente.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="cortes">
@@ -185,6 +199,21 @@
     </footer>
 
     <!--IMPORTS PARA O FRONTEND DA PAGINA USANDO JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.about-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
+    <script>lucide.createIcons();</script>
     <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
