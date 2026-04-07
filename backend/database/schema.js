@@ -4,7 +4,6 @@ export const agendamento = pgTable("agendamento", {
     id_agendamento: serial("id_agendamento").primaryKey(),
     nome: text("nome").notNull(),
     barber: text("barbeiro").notNull(),
-    barbeiroId: serial("barbeiro_id").references(() => barbeiros.id_barbeiro),
     telefone: varchar("telefone", {length: 20}),
     servico: text("servico").notNull(),
     dataAgendamento: date("data_agendamento").notNull(),
