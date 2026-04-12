@@ -16,13 +16,13 @@
             z-index: 1000;
             transition: all 0.3s ease-in-out;
             background: transparent;
-            height: 80px;
+            height: 90px;
         }
 
         header.scrolled {
             background: #101010;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-            height: 70px;
+            height: 90px;
         }
 
         .skip-link {
@@ -63,7 +63,7 @@
         }
 
         .logo-nav {
-            height: 45px;
+            height: 80px;
             width: auto;
         }
 
@@ -285,7 +285,7 @@
                 height: 60px;
             }
             .logo-nav {
-                height: 35px;
+                height: 50px;
             }
         }
 
@@ -587,7 +587,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
+                        navlinks.forEach(link => {
                             link.classList.remove('active');
                             if (link.getAttribute('href') === `#${id}`) {
                                 link.classList.add('active');

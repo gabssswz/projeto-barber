@@ -793,14 +793,20 @@ footer > small {
     footer {
         flex-direction: column;
         gap: 1.5rem;
-    } }
+        text-align: center;
+    }
 
-    footer > div,
-    footer > img,
-    footer > h4 {
+    footer > div {
         flex: 1 1 100%;
+        max-width: 100%;
     }
 
-    footer > img {
+    footer .brand img {
         max-width: 100px;
+        margin: 0 auto;
     }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
