@@ -6,20 +6,333 @@
     <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
     <title>Elite Barbearia </title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS crítico inline para header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+            background: transparent;
+            height: 80px;
+        }
+
+        header.scrolled {
+            background: #101010;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            height: 70px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 10px;
+            background: #f97316;
+            color: #101010;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            z-index: 1001;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 10px;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo-link:hover {
+            opacity: 0.9;
+        }
+
+        .logo-nav {
+            height: 45px;
+            width: auto;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus,
+        .nav-link.active {
+            color: #f97316;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #f97316;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus::after,
+        .nav-link.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .btn-cta {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 12px 28px;
+            background: #f97316;
+            color: #101010;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-cta:hover,
+        .btn-cta:focus {
+            background: #e55a0d;
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+            transform: translateY(-2px);
+            outline: 3px solid rgba(249, 115, 22, 0.25);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hamburger:hover,
+        .hamburger:focus {
+            background-color: rgba(249, 115, 22, 0.1);
+            outline: 2px solid rgba(249, 115, 22, 0.5);
+            outline-offset: 2px;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 2px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(16, 16, 16, 0.98);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .mobile-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-link:hover,
+        .mobile-link:focus,
+        .mobile-link.active {
+            color: #f97316;
+        }
+
+        .mobile-menu.active .mobile-link:nth-child(1) { animation: mobileLinkFade 0.4s ease 0.1s forwards; }
+        .mobile-menu.active .mobile-link:nth-child(2) { animation: mobileLinkFade 0.4s ease 0.15s forwards; }
+        .mobile-menu.active .mobile-link:nth-child(3) { animation: mobileLinkFade 0.4s ease 0.2s forwards; }
+        .mobile-menu.active .mobile-link:nth-child(4) { animation: mobileLinkFade 0.4s ease 0.25s forwards; }
+        .mobile-menu.active .mobile-link:nth-child(5) { animation: mobileLinkFade 0.4s ease 0.3s forwards; }
+        .mobile-menu.active .mobile-link:nth-child(6) { animation: mobileLinkFade 0.4s ease 0.35s forwards; }
+
+        @keyframes mobileLinkFade {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-cta-mobile {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 16px 32px;
+            background: #f97316;
+            color: #101010;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta-mobile:hover,
+        .btn-cta-mobile:focus {
+            background: #e55a0d;
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+            .header-container {
+                padding: 0 40px;
+            }
+            .menu {
+                gap: 32px;
+            }
+            .nav-link {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 24px;
+            }
+            .menu {
+                display: none;
+            }
+            .btn-cta {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            header.scrolled {
+                height: 60px;
+            }
+            .logo-nav {
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 16px;
+            }
+            .mobile-link {
+                font-size: 18px;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_CCCThNFuY8dr9tDe_7gvK68c2QXKF4I"></script>    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script></head>
 <body>
     <header>
-        <img src="Imagens/Logo_sem_fundo.png" alt="Logo da Elite" class="logo-nav">
-        <nav class="menu">
-            <a href="#home">Home</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#cortes">Cortes</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#planos">Planos</a>
-            <a href="#contato">Contato</a>
-            <a href="https://app.barbercode.com.br/client/elitebarbearia" target="_blank">Agendar Horário</a>
-        </nav>
+        <a href="#home" class="skip-link">Pular para conteúdo principal</a>
+        <div class="header-container">
+            <a href="#home" class="logo-link">
+                <img src="Imagens/Logo_sem_fundo.png" alt="Logo da Elite Barbearia" class="logo-nav">
+            </a>
+            <nav class="menu" role="navigation" aria-label="Navegação principal">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#cortes" class="nav-link">Cortes</a>
+                <a href="#produtos" class="nav-link">Produtos</a>
+                <a href="#planos" class="nav-link">Planos</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+            <a href="https://app.barbercode.com.br/client/elitebarbearia" class="btn-cta" target="_blank" rel="noopener">Agendar</a>
+            <button class="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <nav class="mobile-nav">
+                <a href="#home" class="mobile-link">Home</a>
+                <a href="#sobre" class="mobile-link">Sobre</a>
+                <a href="#cortes" class="mobile-link">Cortes</a>
+                <a href="#produtos" class="mobile-link">Produtos</a>
+                <a href="#planos" class="mobile-link">Planos</a>
+                <a href="#contato" class="mobile-link">Contato</a>
+                <a href="https://app.barbercode.com.br/client/elitebarbearia" class="btn-cta-mobile" target="_blank" rel="noopener">Agendar</a>
+            </nav>
+        </div>
     </header> 
     <main>
         <section id="home" class="hero" aria-label="Seção Hero Elite Barbearia">
@@ -192,15 +505,101 @@
     <!-- PARTE PARA O FRONTEND DA PAGINA JAVASCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.about-card');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
+            const header = document.querySelector('header');
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+
+            // Scroll effect for navbar with throttling
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        if (window.scrollY > 50) {
+                            header.classList.add('scrolled');
+                        } else {
+                            header.classList.remove('scrolled');
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Hamburger menu toggle
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+                hamburger.setAttribute('aria-expanded', !expanded);
+                mobileMenu.setAttribute('aria-hidden', expanded);
+                
+                // Bloqueia scroll quando menu está aberto
+                if (mobileMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close mobile menu when clicking outside (on overlay)
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = ''; // Libera scroll
+                }
+            });
+
+            // Smooth scroll for anchor links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const headerHeight = header.offsetHeight;
+                            const targetPosition = target.offsetTop - headerHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
-            }, { threshold: 0.1 });
-            cards.forEach(card => observer.observe(card));
+            });
+
+            // Active link detection
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
     <script>lucide.createIcons();</script>
