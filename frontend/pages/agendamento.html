@@ -4,27 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="agendamento.css">
 </head>
 <body>
-    <form id="formAgendamento" method="post" action="#">
-        <label>Nome</label><br>
-        <input type="text" id="nome" required><br>
-        <label>Barbeiro</label><br>
-        <input type="text" id="barbeiro" required><br>
-        <label>Telefone</label><br>
-        <input type="text" id="telefone" required><br>
-        <label>Serviço</label><br>
-        <input type="text" id="servico" required><br>
-        <label>Data</label><br>
-        <input type="date" id="dataAgendamento" required><br>
-        <label>Hora</label><br>
-        <input type="time" id="horaAgendamento" required><br>
-        <label>Observações</label><br>
-        <textarea id="observacoes"></textarea><br>
-        <button type="submit">ENVIAR</button>
-    </form>
+    <header>
+        <a href="index.html">Voltar</a>
+        <section class="hero">
+            <img src="Imagens/Logo_sem_fundo.png" alt="Logo Elite barbearia">
+            <h1>Agendar Horário</h1>
+        </section>
+        <nav class="steps">
+            <span>1 Serviço</span>
+            <span>2 Barbeiro</span>
+            <span>3 Data/Hora</span>
+            <span>4 Dados</span>
+        </nav>
+    </header>
+    <section class="servicos">
+            <div>
+                <div class="corte">
+                    <h2>corte de cabelo</h2>
+                    <h3>R$ 60</h3>
+                    <small>45min</small>
+                </div>
+                <div class="barba">
+                    <h2>barba completa</h2>
+                    <h3>R$ 45</h3>
+                    <small>30min</small>
+                </div>
+                <div class="corte-barba">
+                    <h2>corte + barba</h2>
+                    <h3>R$ 60</h3>
+                    <small>75min</small>
+                </div>
+                <div class="hidratacaoCapilar">
+                    <h2>hidratação capilar</h2>
+                    <h3>R$ 80</h3>
+                    <small>60min</small>
+                </div>
+            </div>
+            <button>Continuar</button>
+        </section>
     <div id="listaAgendamento"></div>
     <script src="/frontend/js/listaAgendamento.js"></script>
     <script src="/frontend/js/agendamento.js"></script>

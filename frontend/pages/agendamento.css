@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --laranja: #f97316;
+    --bg: #1A1A1A;
+    --superficie: #242424;
+    --borda: #3A3A3A;
+    --texto: #F0F0F0;
+    --mudo: #888;
+}
+
+body {
+    background: var(--bg);
+    color: var(--texto);
+    font-family: 'Barlow', sans-serif;
+}
