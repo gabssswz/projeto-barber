@@ -380,6 +380,7 @@ header.scrolled {
    ========================= */
 h1, h2 {
     font-family: 'Bebas Neue', sans-serif;
+    font-size:4em;
     color: var(--cor-white);
     text-align: center;
 }
@@ -446,17 +447,18 @@ p {
    ========================= */
 .cards {
     display: flex;
-    justify-content: center;
-    gap: 25px;
     perspective: 1000px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:center;
 }
 .card {
     background-color: #1a1a1a;
     backdrop-filter: blur(25px);
     color: rgba(255, 255, 255, 0.411);
-    padding: 20px;
-    border: 1px solid var(--cor-laranja);
-    border-radius: 5px;
+    padding: 32px;
+    border: 2px solid var(--cor-laranja);
+    border-radius: 8px;
     opacity: 0;
     transition: box-shadow 0.4s ease-in-out;
     transform-style: preserve-3d;
