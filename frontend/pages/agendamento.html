@@ -4,36 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="agendamento.css">
 </head>
 <body>
-   
-    <form id="formAgendamento">
-    <label>Nome</label><br>
-    <input type="text" id="nome"><br>
-
-    <label>Barbeiro</label><br>
-    <input type="text" id="barbeiro"><br>
-
-    <label>Telefone</label><br>
-    <input type="text" id="telefone"><br>
-
-    <label>Serviço</label><br>
-    <input type="text" id="servico"><br>
-
-    <label>Data</label><br>
-    <input type="date" id="dataAgendamento"><br>
-
-    <label>Hora</label><br>
-    <input type="time" id="horaAgendamento"><br>
-
-    <label>Observações</label><br>
-    <textarea id="observacoes"></textarea><br>
-
-    <button type="submit">ENVIAR</button>
-</form>
-
+    <form id="formAgendamento" method="post" action="#">
+        <label>Nome</label><br>
+        <input type="text" id="nome" required><br>
+        <label>Barbeiro</label><br>
+        <input type="text" id="barbeiro" required><br>
+        <label>Telefone</label><br>
+        <input type="text" id="telefone" required><br>
+        <label>Serviço</label><br>
+        <input type="text" id="servico" required><br>
+        <label>Data</label><br>
+        <input type="date" id="dataAgendamento" required><br>
+        <label>Hora</label><br>
+        <input type="time" id="horaAgendamento" required><br>
+        <label>Observações</label><br>
+        <textarea id="observacoes"></textarea><br>
+        <button type="submit">ENVIAR</button>
+    </form>
     <div id="listaAgendamento"></div>
-
     <script src="/frontend/js/listaAgendamento.js"></script>
     <script src="/frontend/js/agendamento.js"></script>
 </body>
