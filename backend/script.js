@@ -164,14 +164,14 @@ document.querySelectorAll(".card").forEach(card => {
 
 //EFEITO PARALAX
 
-gsap.to('.hero', {
-    yPercent:20,
-    ease:'none',
-    scrollTrigger : {
-        trigger: '.hero-content',
-        scrub:true
-    }
-})
+/* gsap.to(".hero", {
+  yPercent: 20,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".hero-content",
+    scrub: true,
+  },
+}); */
 
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");

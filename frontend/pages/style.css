@@ -15,16 +15,13 @@ html {
     scroll-padding: 60px;
 }
 
-body {
-    overflow-x: hidden;
-}
-
 body{
     background-color: var(--cor-black);
     color: var(--cor-white);
     font-family: 'Poppins', sans-serif;
     margin: 0;
     perspective: 1200;
+    overflow-x: hidden;
 }
 
 h1,h2{
@@ -222,6 +219,9 @@ header.scrolled {
 
 .hamburger {
     display: none;
+    position: fixed;
+    left: 22rem;
+    z-index: 1000;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -936,11 +936,13 @@ footer > small {
 
         .hamburger {
             display: none;
+            justify-content: end;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 48px;
             height: 48px;
+            color: orange;
             background: none;
             border: none;
             cursor: pointer;
