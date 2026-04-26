@@ -122,17 +122,94 @@
                 </div>
             </div>
         </section>
-        <section id="cortes">
-            <div>
-                <h2>Nossos cortes</h2>
-                <div class="section-divider"></div>
-                <h3 class="secondary-text">Confira nossos estilos e escolha o seu visual</h3>
-                <!-- Imagem de corte 1-->
-                <!-- Imagem de corte 2-->
-                <!-- Imagem de corte 3-->
-                <!-- Imagem de corte 4-->
-                <!-- Imagem de corte 5-->
-                <!-- Imagem de corte 6-->
+        <section id="cortes" class="cortes-section" aria-labelledby="titulo-cortes" role="region">
+            <div class="cortes-wrapper">
+                <div class="cortes-header">
+                    <h2 id="titulo-cortes" class="cortes-title">
+                        <span class="cortes-title-light">NOSSOS </span>
+                        <span class="cortes-title-highlight">CORTES</span>
+                    </h2>
+                    <div class="section-divider"></div>
+                    <p class="cortes-subtitle secondary-text">Confira nossos estilos e escolha o seu visual</p>
+                </div>
+
+                <div class="cortes-grid" role="list">
+                    <article class="corte-card" role="listitem">
+                        <div class="corte-trigger" role="button" tabindex="0" aria-label="Abrir detalhes do corte Degradê" data-index="0" data-description="Técnica precisa com transição limpa e acabamento profissional.">
+                            <img src="Imagens/imagemdefundohome.jpeg" alt="Imagem de referência do corte Degradê" class="corte-image" loading="lazy" decoding="async">
+                            <div class="corte-overlay" aria-hidden="true">
+                                <h3 class="corte-category">DEGRADÊ</h3>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="corte-card" role="listitem">
+                        <div class="corte-trigger" role="button" tabindex="0" aria-label="Abrir detalhes do corte Corte Moderno" data-index="1" data-description="Estilo atual com linhas definidas e visual contemporâneo.">
+                            <img src="Imagens/imagemdefundohome.jpeg" alt="Imagem de referência do Corte Moderno" class="corte-image" loading="lazy" decoding="async">
+                            <div class="corte-overlay" aria-hidden="true">
+                                <h3 class="corte-category">CORTE MODERNO</h3>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="corte-card" role="listitem">
+                        <div class="corte-trigger" role="button" tabindex="0" aria-label="Abrir detalhes do corte Barba" data-index="2" data-description="Modelagem e acabamento com presença e personalidade.">
+                            <img src="Imagens/imagemdefundohome.jpeg" alt="Imagem de referência do serviço de Barba" class="corte-image" loading="lazy" decoding="async">
+                            <div class="corte-overlay" aria-hidden="true">
+                                <h3 class="corte-category">BARBA</h3>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="corte-card" role="listitem">
+                        <div class="corte-trigger" role="button" tabindex="0" aria-label="Abrir detalhes do corte Social Moderno" data-index="3" data-description="Equilíbrio perfeito entre elegância clássica e toque moderno.">
+                            <img src="Imagens/imagemdefundohome.jpeg" alt="Imagem de referência do corte Social Moderno" class="corte-image" loading="lazy" decoding="async">
+                            <div class="corte-overlay" aria-hidden="true">
+                                <h3 class="corte-category">SOCIAL MODERNO</h3>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="corte-card" role="listitem">
+                        <div class="corte-trigger" role="button" tabindex="0" aria-label="Abrir detalhes do corte Premium" data-index="4" data-description="Atendimento premium com técnica refinada e atenção aos detalhes.">
+                            <img src="Imagens/imagemdefundohome.jpeg" alt="Imagem de referência do corte Premium" class="corte-image" loading="lazy" decoding="async">
+                            <div class="corte-overlay" aria-hidden="true">
+                                <h3 class="corte-category">PREMIUM</h3>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="corte-card" role="listitem">
+                        <div class="corte-trigger" role="button" tabindex="0" aria-label="Abrir detalhes do corte Clássico" data-index="5" data-description="Visual atemporal para quem valoriza tradição e estilo.">
+                            <img src="Imagens/imagemdefundohome.jpeg" alt="Imagem de referência do corte Clássico" class="corte-image" loading="lazy" decoding="async">
+                            <div class="corte-overlay" aria-hidden="true">
+                                <h3 class="corte-category">CLÁSSICO</h3>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="cortes-lightbox" id="cortes-lightbox" aria-hidden="true">
+                <div class="cortes-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-titulo">
+                    <button type="button" class="lightbox-close" aria-label="Fechar galeria de cortes">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Ver corte anterior">
+                        <span aria-hidden="true">&#10094;</span>
+                    </button>
+                    <figure class="lightbox-figure">
+                        <img src="" alt="" class="lightbox-image">
+                        <figcaption class="lightbox-caption">
+                            <h3 id="lightbox-titulo"></h3>
+                            <p class="lightbox-description secondary-text"></p>
+                            <small class="lightbox-counter"></small>
+                        </figcaption>
+                    </figure>
+                    <button type="button" class="lightbox-nav lightbox-next" aria-label="Ver próximo corte">
+                        <span aria-hidden="true">&#10095;</span>
+                    </button>
+                </div>
             </div>
         </section>
         <section id="produtos">
@@ -146,50 +223,57 @@
                 <!-- Imagem de produto-->
             </div>
         </section>
-        <section id="planos">
-            <div>
-                <h2>Planos Mensais</h2>
-                <div class="section-divider"></div>
-                <h3 class="secondary-text">Escolha o plano ideal e economize</h3>
-                <div class="cards">
-                    <article class="card" id="card">
-                        <div class="glow"></div>
-                        <h3>Básico</h3>
-                        <p class="card-preco">R$ 159<small>/m</small></p>
-                        <p class="card-resumo">1 corte por mês</p>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i>1 corte por mês</li>
+        <section id="planos" class="planos-section" aria-labelledby="titulo-planos" role="region">
+            <div class="planos-wrapper">
+                <div class="planos-header">
+                    <h2 id="titulo-planos" class="planos-title">
+                        <span class="planos-title-light">PLANOS </span>
+                        <span class="planos-title-highlight">MENSAIS</span>
+                    </h2>
+                    <div class="section-divider"></div>
+                    <p class="planos-subtitle secondary-text">Escolha o plano ideal e economize</p>
+                </div>
+
+                <div class="planos-grid">
+                    <article class="plan-card" aria-labelledby="plano-basico-titulo">
+                        <h3 id="plano-basico-titulo" class="plan-card-title">Básico</h3>
+                        <p class="plan-price">R$ 159</p>
+                        <p class="plan-cuts">2 cortes por mês</p>
+                        <ul class="plan-benefits">
+                            <li><i class="fa-solid fa-check"></i>2 cortes de cabelo</li>
                             <li><i class="fa-solid fa-check"></i>Finalização premium</li>
                             <li><i class="fa-solid fa-check"></i>Toalha quente</li>
-                            <li><i class="fa-solid fa-check"></i>10% nos produtos</li>
+                            <li><i class="fa-solid fa-check"></i>10% desconto em produtos</li>
                         </ul>
                     </article>
-                    <article class="card" id="card">
-                        <div class="glow"></div>
-                        <h3>Premium</h3>
-                        <p class="card-preco">R$ 289<small>/m</small></p>
-                        <p class="card-resumo">1 corte por mês</p>
-                        <ul>
+
+                    <article class="plan-card plan-card-featured" aria-labelledby="plano-premium-titulo">
+                        <span class="plan-badge">Mais escolhido</span>
+                        <h3 id="plano-premium-titulo" class="plan-card-title">Premium</h3>
+                        <p class="plan-price">R$ 289</p>
+                        <p class="plan-cuts">4 cortes por mês</p>
+                        <ul class="plan-benefits">
+                            <li><i class="fa-solid fa-check"></i>4 cortes de cabelo</li>
                             <li><i class="fa-solid fa-check"></i>Barba incluída</li>
-                            <li><i class="fa-solid fa-check"></i>1 corte por mês</li>
                             <li><i class="fa-solid fa-check"></i>Finalização completa</li>
-                            <li><i class="fa-solid fa-check"></i>Finalização premium</li>
-                            <li><i class="fa-solid fa-check"></i>Toalha quente</li>
-                            <li><i class="fa-solid fa-check"></i>15% nos produtos</li>
+                            <li><i class="fa-solid fa-check"></i>Tratamento capilar</li>
+                            <li><i class="fa-solid fa-check"></i>15% desconto em produtos</li>
+                            <li><i class="fa-solid fa-check"></i>Agendamento prioritário</li>
                         </ul>
                     </article>
-                    <article class="card" id="card">
-                        <div class="glow"></div>
-                         <h3>Elite</h3>
-                        <p class="card-preco">R$ 499<small>/m</small></p>
-                        <p class="card-resumo">3 corte por mês</p>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i>Barba incluída</li>
-                            <li><i class="fa-solid fa-check"></i>1 corte por semana</li>
-                            <li><i class="fa-solid fa-check"></i>Finalização completa</li>
-                            <li><i class="fa-solid fa-check"></i>Finalização premium</li>
-                            <li><i class="fa-solid fa-check"></i>Toalha quente</li>
-                            <li><i class="fa-solid fa-check"></i>30% nos produtos</li>
+
+                    <article class="plan-card" aria-labelledby="plano-elite-titulo">
+                        <h3 id="plano-elite-titulo" class="plan-card-title">Elite</h3>
+                        <p class="plan-price">R$ 499</p>
+                        <p class="plan-cuts">8 cortes por mês</p>
+                        <ul class="plan-benefits">
+                            <li><i class="fa-solid fa-check"></i>8 cortes de cabelo</li>
+                            <li><i class="fa-solid fa-check"></i>Barba ilimitada</li>
+                            <li><i class="fa-solid fa-check"></i>Tratamentos especiais</li>
+                            <li><i class="fa-solid fa-check"></i>Massagem relaxante</li>
+                            <li><i class="fa-solid fa-check"></i>20% desconto em produtos</li>
+                            <li><i class="fa-solid fa-check"></i>Agendamento VIP</li>
+                            <li><i class="fa-solid fa-check"></i>Bebidas premium</li>
                         </ul>
                     </article>
                 </div>
@@ -246,6 +330,18 @@
             const mobileMenu = document.querySelector('.mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
             const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+            const corteTriggers = document.querySelectorAll('.corte-trigger');
+            const cortesLightbox = document.querySelector('#cortes-lightbox');
+            const lightboxDialog = cortesLightbox ? cortesLightbox.querySelector('.cortes-lightbox-dialog') : null;
+            const lightboxImage = cortesLightbox ? cortesLightbox.querySelector('.lightbox-image') : null;
+            const lightboxTitle = cortesLightbox ? cortesLightbox.querySelector('#lightbox-titulo') : null;
+            const lightboxDescription = cortesLightbox ? cortesLightbox.querySelector('.lightbox-description') : null;
+            const lightboxCounter = cortesLightbox ? cortesLightbox.querySelector('.lightbox-counter') : null;
+            const lightboxCloseButton = cortesLightbox ? cortesLightbox.querySelector('.lightbox-close') : null;
+            const lightboxPrevButton = cortesLightbox ? cortesLightbox.querySelector('.lightbox-prev') : null;
+            const lightboxNextButton = cortesLightbox ? cortesLightbox.querySelector('.lightbox-next') : null;
+            let activeCorteIndex = 0;
+            let focusedTriggerBeforeLightbox = null;
 
             // Efeito de scroll na barra de navegacao com otimizacao
             let ticking = false;
@@ -344,6 +440,118 @@
 
             sections.forEach(section => {
                 observer.observe(section);
+            });
+
+            function getCorteData(trigger) {
+                const image = trigger.querySelector('.corte-image');
+                const title = trigger.querySelector('.corte-category');
+                const description = trigger.getAttribute('data-description');
+
+                return {
+                    src: image ? image.getAttribute('src') : '',
+                    alt: image ? image.getAttribute('alt') : '',
+                    title: title ? title.textContent.trim() : '',
+                    description: description ? description.trim() : ''
+                };
+            }
+
+            function renderLightbox(index) {
+                const trigger = corteTriggers[index];
+                if (!trigger || !lightboxImage || !lightboxTitle || !lightboxDescription || !lightboxCounter) {
+                    return;
+                }
+
+                const data = getCorteData(trigger);
+                lightboxImage.setAttribute('src', data.src);
+                lightboxImage.setAttribute('alt', data.alt);
+                lightboxTitle.textContent = data.title;
+                lightboxDescription.textContent = data.description;
+                lightboxCounter.textContent = `${index + 1} / ${corteTriggers.length}`;
+                activeCorteIndex = index;
+            }
+
+            function openLightbox(index, triggerElement) {
+                if (!cortesLightbox || !lightboxDialog) {
+                    return;
+                }
+
+                focusedTriggerBeforeLightbox = triggerElement || null;
+                renderLightbox(index);
+                cortesLightbox.classList.add('active');
+                cortesLightbox.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('modal-open');
+                lightboxCloseButton.focus();
+            }
+
+            function closeLightbox() {
+                if (!cortesLightbox) {
+                    return;
+                }
+
+                cortesLightbox.classList.remove('active');
+                cortesLightbox.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('modal-open');
+
+                if (focusedTriggerBeforeLightbox) {
+                    focusedTriggerBeforeLightbox.focus();
+                }
+            }
+
+            function goToNextCorte() {
+                const nextIndex = (activeCorteIndex + 1) % corteTriggers.length;
+                renderLightbox(nextIndex);
+            }
+
+            function goToPrevCorte() {
+                const prevIndex = (activeCorteIndex - 1 + corteTriggers.length) % corteTriggers.length;
+                renderLightbox(prevIndex);
+            }
+
+            corteTriggers.forEach((trigger, index) => {
+                trigger.addEventListener('click', () => {
+                    openLightbox(index, trigger);
+                });
+
+                trigger.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openLightbox(index, trigger);
+                    }
+                });
+            });
+
+            if (lightboxPrevButton) {
+                lightboxPrevButton.addEventListener('click', goToPrevCorte);
+            }
+
+            if (lightboxNextButton) {
+                lightboxNextButton.addEventListener('click', goToNextCorte);
+            }
+
+            if (lightboxCloseButton) {
+                lightboxCloseButton.addEventListener('click', closeLightbox);
+            }
+
+            if (cortesLightbox) {
+                cortesLightbox.addEventListener('click', event => {
+                    if (event.target === cortesLightbox) {
+                        closeLightbox();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', event => {
+                if (!cortesLightbox || !cortesLightbox.classList.contains('active')) {
+                    return;
+                }
+
+                if (event.key === 'Escape') {
+                    closeLightbox();
+                } else if (event.key === 'ArrowRight') {
+                    goToNextCorte();
+                } else if (event.key === 'ArrowLeft') {
+                    goToPrevCorte();
+                }
             });
         });
     </script>
