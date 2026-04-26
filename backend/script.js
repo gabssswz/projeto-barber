@@ -173,30 +173,3 @@ document.querySelectorAll(".card").forEach(card => {
   },
 }); */
 
-async function initMap() {
-    const { Map } = await google.maps.importLibrary("maps");
-    const { InfoWindow } = await google.maps.importLibrary("maps");
-    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-
-    const map = new Map(document.getElementById('map'), {
-        zoom: 18,
-        center: { lat: -21.37437180145707, lng: -45.51088139840124 },
-        mapId: "bc7e43f77a454f97260f1e2c"
-    });
-
-    const marker = new AdvancedMarkerElement({
-        position: { lat: -21.37437180145707, lng: -45.51088139840124 },
-        map: map,
-        title: "Elite Barbearia"
-    });
-
-    const infoWindow = new InfoWindow({
-        content: '<h1 style="color: orange">Elite Barbearia</h1>'
-    });
-
-    marker.addListener('gmp-click', () => {
-        infoWindow.open(map, marker);
-    });
-}
-
-initMap();

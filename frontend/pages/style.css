@@ -552,87 +552,178 @@ section h2 {
 /* =========================
    SOBRE (Missão, Visão, Valores)
    ========================= */
-.about-card {
-    background-color: #1A1A1A;
-    border: 1px solid rgba(249, 115, 22, 0.2);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-}
-.about-card.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-.about-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
-}
-.card-content {
-    text-align: center;
-}
-.card-icon {
-    width: 4rem;
-    height: 4rem;
-    color: #f97316;
-    margin-bottom: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.about-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #f97316;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-}
-.about-card p {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.7;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-}
-
-/* Seção sobre */
 .sobre-section {
+    position: relative;
     padding: 5rem 1rem;
     background-color: #101010;
 }
 .sobre-wrapper {
-    max-width: 80rem;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 1.5rem;
 }
 .sobre-header {
     text-align: center;
     margin-bottom: 4rem;
 }
-.sobre-header h2 {
+.sobre-title {
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     margin-bottom: 1rem;
 }
-.cards-grid {
+.sobre-title-light {
+    color: var(--cor-white);
+}
+.sobre-title-highlight {
+    color: var(--cor-laranja);
+}
+.sobre-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+}
+.sobre-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+.sobre-foto-frame,
+.sobre-mapa-frame {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+.sobre-foto-frame {
+    aspect-ratio: 16 / 9;
+}
+.sobre-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.sobre-mapa-frame {
+    height: 300px;
+    border: 2px solid rgba(249, 115, 22, 0.3);
+}
+.sobre-mapa {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(20%) saturate(80%);
+}
+.sobre-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.about-card {
+    background-color: #1A1A1A;
+    padding: 1.5rem;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.about-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(249, 115, 22, 0.45);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.2);
+}
+.about-card-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+}
+.about-emblem-wrap {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+}
+.about-emblem {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.card-content {
+    flex: 1;
+    max-width: 100%;
+    text-align: left;
+}
+.about-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #f97316;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+}
+.about-card p {
+    color: #A0A0A0;
+    font-size: 0.95rem;
+    line-height: 1.625;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin: 0;
 }
 @media (min-width: 768px) {
     .sobre-section {
-        padding: 5rem 1.5rem;
+        padding: 7rem 1rem;
     }
-    .sobre-header h2 {
-        font-size: 3.75rem;
+    .sobre-wrapper {
+        padding: 0 3rem;
     }
-    .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .sobre-title {
+        font-size: 4rem;
+    }
+    .sobre-visual {
+        gap: 2rem;
+    }
+    .sobre-mapa-frame {
+        height: 350px;
+    }
+    .sobre-cards {
+        gap: 2rem;
+    }
+    .about-card {
+        padding: 2rem;
+    }
+    .about-card-row {
+        align-items: center;
+        gap: 1.25rem;
+        text-align: left;
+    }
+    .about-emblem-wrap {
+        width: 80px;
+        height: 80px;
+    }
+    .about-card h3 {
+        font-size: 1.5rem;
     }
 }
 @media (min-width: 1024px) {
     .sobre-section {
-        padding: 5rem 2rem;
+        padding: 8rem 1rem;
+    }
+    .sobre-wrapper {
+        padding: 0 5rem;
+    }
+    .sobre-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 4rem;
+    }
+    .sobre-title {
+        font-size: 5rem;
+    }
+    .sobre-mapa-frame {
+        height: 400px;
     }
 }
 
@@ -771,5 +862,8 @@ footer > small {
     }
     .mobile-link {
         font-size: 18px;
+    }
+    .card-content {
+        max-width: 100%;
     }
 }
