@@ -1,3 +1,11 @@
+document.querySelectorAll('.corte, .barba, .corte-barba, .hidratacaoCapilar').forEach(card => {
+    card.addEventListener('click', function() {
+        const input = this.querySelector('input[type="radio"]');
+        input.checked = true;
+    });
+});
+
+/*
 document.getElementById('formAgendamento').addEventListener('submit', async (e) => {
     e.preventDefault()
 
@@ -32,4 +40,4 @@ document.getElementById('formAgendamento').addEventListener('submit', async (e) 
     } catch (error) {
         console.log("Erro: ", error)
     }
-})
+})          */

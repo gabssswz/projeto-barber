@@ -1,39 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento</title>
+    <link rel="stylesheet" href="agendamento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-   
-    <form id="formAgendamento">
-    <label>Nome</label><br>
-    <input type="text" id="nome"><br>
-
-    <label>Barbeiro</label><br>
-    <input type="text" id="barber"><br>
-
-    <label>Telefone</label><br>
-    <input type="text" id="telefone"><br>
-
-    <label>Serviço</label><br>
-    <input type="text" id="servico"><br>
-
-    <label>Data</label><br>
-    <input type="date" id="dataAgendamento"><br>
-
-    <label>Hora</label><br>
-    <input type="time" id="horaAgendamento"><br>
-
-    <label>Observações</label><br>
-    <textarea id="observacoes"></textarea><br>
-
-    <button type="submit">ENVIAR</button>
-</form>
-
+    <header>
+        <a href="index.html"><i class="fa-solid fa-arrow-left"></i>Voltar</a>
+        <img src="Imagens/Logo_sem_fundo.png" alt="Logo Elite barbearia">
+        <h1>Agendar Horário</h1>
+        <div class="section-divider"></div>
+        <nav class="steps">
+            <div class="step-ativo">
+                <div class="step-circulo">1</div>
+                <span>Serviço</span>
+            </div>
+            <div class="div-linha"></div>
+            <div class="step">
+                <div class="step-circulo">2</div>
+                <span>Barbeiro</span>
+            </div>
+            <div class="div-linha"></div>
+            <div class="step">
+                <div class="step-circulo">3</div>
+                <span>Data/hora</span>
+            </div>
+            <div class="div-linha"></div>
+            <div class="step">
+                <div class="step-circulo">4</div>
+                <span>Dados</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="servicos">
+            <h2 >Escolha o serviço</h2>
+                <div class="cards">
+                    <div class="corte">
+                        <div>
+                            <h2>corte de cabelo</h2>
+                            <h3>R$ 60</h3>
+                            <small><i class="fa-regular fa-clock"></i>45 min</small>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="barba">
+                        <div>
+                            <h2>barba completa</h2>
+                            <h3>R$ 45</h3>
+                            <small><i class="fa-regular fa-clock"></i>30 min</small>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="corte-barba">
+                        <div>
+                            <h2>corte + barba</h2>
+                            <h3>R$ 60</h3>
+                            <small><i class="fa-regular fa-clock"></i>75 min</small>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="hidratacaoCapilar">
+                        <div>
+                            <h2>hidratação capilar</h2>
+                            <h3>R$ 80</h3>
+                            <small><i class="fa-regular fa-clock"></i>60 min</small>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                </div>
+                <button>Continuar</button>
+        </section>
+    </main>
     <div id="listaAgendamento"></div>
-
     <script src="/frontend/js/listaAgendamento.js"></script>
     <script src="/frontend/js/agendamento.js"></script>
 </body>

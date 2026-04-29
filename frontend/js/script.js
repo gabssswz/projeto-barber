@@ -12,44 +12,38 @@ requestAnimationFrame(raf);
 gsap.ticker.lagSmoothing(0);
 
 // ANIMACAO DE SEPARACAO DOS CARDS
-gsap.to(".cards", {
+gsap.to(".planos-grid", {
     scrollTrigger: {
         trigger: "#planos",
         start: "top 80%",
         end: "bottom 30%",
         scrub: 1,
     },
-    gap: "80px",
+    gap: "2.5rem",
     ease: "power2.out"
 });
 
 // ANIMACAO DE BLUR + ENTRADA DOS CARDS
-gsap.utils.toArray(".card").forEach((card) => {
-    gsap.fromTo(card,
-    {
+gsap.utils.toArray(".plan-card").forEach((card) => {
+    gsap.from(card, {
         y: -90,
         opacity: 0,
         filter: "blur(10px)",
-        scale: 0.95
-    },
-    {
+        scale: 0.95,
+        immediateRender: false,
         scrollTrigger: {
             trigger: card,
             start: "top 85%",
             end: "top 60%",
             scrub: 1, 
         },
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        scale: 1,
         duration: 1,
         ease: "power3.out"
     });
 });
 
 // ANIMACAO DE FOCO DOS CARDS
-gsap.to(".card", {
+gsap.to(".plan-card", {
     scrollTrigger: {
         trigger: "#planos",
         start: "top center",
@@ -105,9 +99,7 @@ gsap.to("header", {
     ease: "power3.inOut"
 });
 
-document.querySelectorAll(".card").forEach(card => {
-
-    const glow = card.querySelector(".glow");
+document.querySelectorAll(".plan-card").forEach(card => {
 
     card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
@@ -130,16 +122,6 @@ document.querySelectorAll(".card").forEach(card => {
             duration: 0.3,
             ease: "power2.out"
         });
-
-        if (glow) {
-            gsap.to(glow, {
-                x: x,
-                y: y,
-                opacity: 0.15,
-                duration: 0.2,
-                scrub: 1,
-            });
-        }
     });
 
     card.addEventListener("mouseleave", () => {
@@ -152,42 +134,18 @@ document.querySelectorAll(".card").forEach(card => {
             ease: "power3.out"
         });
 
-        if (glow) {
-            gsap.to(glow, {
-                opacity: 0,
-                duration: 0.3,
-            });
-        }
     });
 
 });
 
+//EFEITO PARALAX
 
+/* gsap.to(".hero", {
+  yPercent: 20,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".hero-content",
+    scrub: true,
+  },
+}); */
 
-async function initMap() {
-    const { Map } = await google.maps.importLibrary("maps");
-    const { InfoWindow } = await google.maps.importLibrary("maps");
-    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-
-    const map = new Map(document.getElementById('map'), {
-        zoom: 18,
-        center: { lat: -21.37437180145707, lng: -45.51088139840124 },
-        mapId: "bc7e43f77a454f97260f1e2c"
-    });
-
-    const marker = new AdvancedMarkerElement({
-        position: { lat: -21.37437180145707, lng: -45.51088139840124 },
-        map: map,
-        title: "Elite Barbearia"
-    });
-
-    const infoWindow = new InfoWindow({
-        content: '<h1 style="color: orange">Elite Barbearia</h1>'
-    });
-
-    marker.addListener('gmp-click', () => {
-        infoWindow.open(map, marker);
-    });
-}
-
-initMap();
