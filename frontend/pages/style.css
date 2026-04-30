@@ -1027,6 +1027,98 @@ body.modal-open {
 }
 
 /* =========================
+   Contato (Telefone ,WhatsApp 
+   ,instagram, Endereço)
+   ========================= */
+
+.contato-cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contato-card {
+    background: #1A1A1A;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: 12px;
+    padding: 45px;
+    width: 240px;
+    transition: 0.3s;
+    margin-bottom: 70px;
+}
+
+.contato-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(249, 115, 22, 0.45);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.2);
+}
+
+.contato-card-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contato-emblem-wrap {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+}
+.contato-emblem {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.contato-card-content {
+    flex: 1;
+    max-width: 100%;
+    text-align: center;
+}
+
+.contato-card-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #f97316;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+}
+
+.contato-card-content p {
+    color: #A0A0A0;
+    font-size: 0.95rem;
+    line-height: 1.625;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* =========================
+   Contato Responsivo
+   ========================= */
+@media (max-width: 768px) {
+    .contato-cards {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .contato-card {
+        width: 90%;
+        max-width: 320px;
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    .contato-card-content {
+        text-align: center;
+    }
+}
+
+/* =========================
    FOOTER
    ========================= */
 footer {
@@ -1202,93 +1294,31 @@ footer > small {
 }
 
 /* =========================
-   Contato (Telefone ,WhatsApp 
-   ,instagram, Endereço)
+   Botão do WhatsApp
    ========================= */
-
-.contato-cards {
+.whatsapp-card {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
     display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-.contato-card {
-    background: #111;
-    border: 1px solid rgba(255, 122, 0, 0.4);
-    border-radius: 12px;
-    padding: 45px;
-    width: 240px;
-    transition: 0.3s;
-}
-
-.contato-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(249, 115, 22, 0.45);
-    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.2);
-}
-
-.contato-card-row {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 15px;
-}
-
-.contato-emblem-wrap {
-    flex-shrink: 0;
-    width: 64px;
-    height: 64px;
-}
-.contato-emblem {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-.contato-card-content {
-    flex: 1;
-    max-width: 100%;
-    text-align: left;
-}
-
-.contato-card-content h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: #f97316;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.75rem;
-}
-
-.contato-card-content p {
-    color: #A0A0A0;
-    font-size: 0.95rem;
-    line-height: 1.625;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    margin: 0;
-}
-
-.btn-whatsapp {
-    display: inline-block;
-    background: #f97316;
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+    z-index: 999;
     transition: 0.3s;
+    border: 2px solid #fff;
 }
 
-.btn-whatsapp:hover {
-    background: #f97316;
-    transform: scale(1.05);
+.whatsapp-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.9);
 }
 
-@media (max-width: 768px) {
-    .contato-card {
-        width: 90%;
-        max-width: 300px;
-    }
+.whatsapp-card img {
+    width: 30px;
+    height: 30px;
 }
