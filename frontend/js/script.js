@@ -140,12 +140,14 @@ document.querySelectorAll(".plan-card").forEach(card => {
 
 //EFEITO PARALAX
 
-/* gsap.to(".hero", {
-  yPercent: 20,
+gsap.to("#home.hero ", {
+  yPercent: -50,
   ease: "none",
   scrollTrigger: {
-    trigger: ".hero-content",
-    scrub: true,
+    trigger: ".section",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true
   },
-}); */
+});
 

@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <a href="#home" class="skip-link">Pular para conteúdo principal</a>
+        <a href="#home" class="skip-link" alt="Retornar para pagina principal"></a>
         <div class="header-container">
             <a href="#home" class="logo-link">
                 <img src="Imagens/Logo_sem_fundo.png" alt="Logo da Elite Barbearia" class="logo-nav">
@@ -39,7 +39,7 @@
                 <a href="#produtos" class="mobile-link">Produtos</a>
                 <a href="#planos" class="mobile-link">Planos</a>
                 <a href="#contato" class="mobile-link">Contato</a>
-                <a href="https://app.barbercode.com.br/client/elitebarbearia" class="btn-cta-mobile" target="_blank" rel="noopener">Agendar</a>
+                <a href="agendamento.html" class="btn-cta-mobile" target="_blank" rel="noopener">Agendar</a>
             </nav>
         </div>
     </header> 
@@ -51,7 +51,7 @@
                 <h2 class="hero-subtitle">Onde homens se transformam</h2>
                 <p class="hero-description">Tradição e modernidade se encontram em um espaço exclusivo dedicado ao cuidado masculino premium. Agende sua transformação.</p>
                 <div class="hero-buttons">
-                    <a href="https://app.barbercode.com.br/client/elitebarbearia" class="btn-primary" target="_blank" rel="noopener">Agendar Horário</a>
+                    <a href="agendamento.html" class="btn-primary" target="_blank" rel="noopener">Agendar Horário</a>
                     <a href="#cortes" class="btn-secondary">Ver Serviços</a>
                 </div>
             </div>
@@ -223,7 +223,7 @@
                         <div class="produto-info">
                             <h3 class="produto-titulo">POMADA MODELADORA</h3>
                             <p class="produto-preco">R$ 79,90</p>
-                            <a href="https://wa.me/5535987047873"class="whatsapp-produto" target="_blank">
+                            <a href="https://api.whatsapp.com/send/?phone=5535998420077&text=Olá, vi a Pomada Modeladora pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
                                 Ver Sobre
                             </a>
                         </div>
@@ -233,7 +233,7 @@
                         <div class="produto-info">
                             <h3 class="produto-titulo">ÓLEO PARA BARBA</h3>
                             <p class="produto-preco">R$ 59,90</p>
-                            <a href="https://wa.me/5535987047873"class="whatsapp-produto" target="_blank">
+                            <a href="https://api.whatsapp.com/send/?phone=5535998420077&text=Olá, vi o Óleo para Barba pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
                                 Ver Sobre
                             </a>
                         </div>
@@ -243,7 +243,7 @@
                         <div class="produto-info">
                             <h3 class="produto-titulo">SHAMPOO PREMIUM</h3>
                             <p class="produto-preco">R$ 49,90</p>
-                            <a href="https://wa.me/5535987047873"class="whatsapp-produto" target="_blank">
+                            <a href="https://api.whatsapp.com/send/?phone=5535998420077&text=Olá, vi o Shampoo Premium pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
                                 Ver Sobre
                             </a>
                         </div>
@@ -253,7 +253,7 @@
                         <div class="produto-info">
                             <h3 class="produto-titulo">BALM HIDRATANTE</h3>
                             <p class="produto-preco">R$ 54,90</p>
-                            <a href="https://wa.me/5535987047873"class="whatsapp-produto" target="_blank">
+                            <a href="https://api.whatsapp.com/send/?phone=5535998420077&text=Olá, vi o Balm Hidratante pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
                                 Ver Sobre
                             </a>
                         </div>
@@ -403,7 +403,7 @@
     </footer>
     <!-- Bortao verde do WhatsApp -->
     <a href="https://wa.me/5535988653193" class="whatsapp-card" target="_blank">
-        <img src="Imagens/Visão.png" alt="WhatsApp">
+        <img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-mobile-software-icon-png-image_6315991.png" alt="WhatsApp">
     </a>
 
     <!-- PARTE PARA O FRONTEND DA PAGINA JAVASCRIPT -->
@@ -637,6 +637,10 @@
                     goToPrevCorte();
                 }
             });
+
+            if(window.location.search || window.location.hash) {
+                window.history.replaceState(null,'',window.location.pathname)
+            }
         });
     </script>
     <script>lucide.createIcons();</script>
