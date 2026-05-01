@@ -1,4 +1,24 @@
-document.querySelectorAll('.corte, .barba, .corte-barba, .hidratacaoCapilar').forEach(card => {
+const filtros = document.querySelectorAll('.filtro-btn');
+const cards = document.querySelectorAll('.servico-item');
+
+filtros.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filtros.forEach(b => b.classList.remove('ativo'));
+        btn.classList.add('ativo');
+
+        const categoria = btn.dataset.categoria;
+
+        cards.forEach(card => {
+            if (card.dataset.categoria === categoria) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+document.querySelectorAll('.servico-item').forEach(card => {
     card.addEventListener('click', function() {
         const input = this.querySelector('input[type="radio"]');
         input.checked = true;

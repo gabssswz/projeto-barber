@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <link rel="stylesheet" href="agendamento.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <header>
-        <a href="index.html"><i class="fa-solid fa-arrow-left"></i>Voltar</a>
+        <a href="index.html" class="voltar">
+            <i class="fa-solid fa-arrow-left"></i> Voltar
+        </a>
         <img src="Imagens/Logo_sem_fundo.png" alt="Logo Elite barbearia">
         <h1>Agendar Horário</h1>
         <div class="section-divider"></div>
@@ -37,50 +41,147 @@
     </header>
     <main>
         <section class="servicos">
-            <h2 >Escolha o serviço</h2>
-                <div class="cards">
-                    <div class="corte">
+            <h2>Selecione os serviços</h2>
+            <div class="servico-descricao">
+                <p>Você pode escolher mais de um serviço</p>
+            </div>
+            <div class="filtros">
+                <button class="filtro-btn ativo" data-categoria="cortes">Cortes</button>
+                <button class="filtro-btn" data-categoria="estetica">Estética</button>
+                <button class="filtro-btn" data-categoria="tratamentos">Tratamentos</button>
+                <button class="filtro-btn" data-categoria="coloracao">Coloração</button>
+            </div>
+            <div class="cards">
+                <div class="card-border">
+                    <div class="servico-item" data-categoria="cortes">
                         <div>
-                            <h2>corte de cabelo</h2>
-                            <h3>R$ 60</h3>
-                            <small><i class="fa-regular fa-clock"></i>45 min</small>
+                            <h3>corte de cabelo</h3>
+                            <div class="descricao">
+                                <h3>R$ 40,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>30 min</small>
+                            </div>
                         </div>
                         <input type="radio" name="radio-btn">
                         <div class="radio-custom"></div>
                     </div>
-                    <div class="barba">
+                    <div class="servico-item" data-categoria="cortes">
                         <div>
-                            <h2>barba completa</h2>
-                            <h3>R$ 45</h3>
-                            <small><i class="fa-regular fa-clock"></i>30 min</small>
+                            <h3>barba</h3>
+                            <div class="descricao">
+                                <h3>R$ 35,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>30 min</small>
+                            </div>
                         </div>
                         <input type="radio" name="radio-btn">
                         <div class="radio-custom"></div>
                     </div>
-                    <div class="corte-barba">
+                    <div class="servico-item" data-categoria="cortes">
                         <div>
-                            <h2>corte + barba</h2>
-                            <h3>R$ 60</h3>
-                            <small><i class="fa-regular fa-clock"></i>75 min</small>
+                            <h3>cavanhaque</h3>
+                            <div class="descricao">
+                                <h3>R$ 30,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>20 min</small>
+                            </div>
                         </div>
                         <input type="radio" name="radio-btn">
                         <div class="radio-custom"></div>
                     </div>
-                    <div class="hidratacaoCapilar">
+                    <div class="servico-item" data-categoria="cortes">
                         <div>
-                            <h2>hidratação capilar</h2>
-                            <h3>R$ 80</h3>
-                            <small><i class="fa-regular fa-clock"></i>60 min</small>
+                            <h3>acabamento (pezinho)</h3>
+                            <div class="descricao">
+                                <h3>R$ 15,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>10 min</small>
+                            </div>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="servico-item" data-categoria="estetica" style="display:none">
+                        <div>
+                            <h3>hidratação capilar</h3>
+                            <div class="descricao">
+                                <h3>R$ 80,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>60 min</small>
+                            </div>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="servico-item" data-categoria="estetica" style="display:none">
+                        <div>
+                            <h3>sobrancelha</h3>
+                            <div class="descricao">
+                                <h3>R$ 20,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>15 min</small>
+                            </div>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="servico-item" data-categoria="tratamentos" style="display:none">
+                        <div>
+                            <h3>terapia capilar</h3>
+                            <div class="descricao">
+                                <h3>R$ 20,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>45 min</small>
+                            </div>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="servico-item" data-categoria="tratamentos" style="display:none">
+                        <div>
+                            <h3>botox</h3>
+                            <div class="descricao">
+                                <h3>R$ 70,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>60 min</small>
+                            </div>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="servico-item" data-categoria="coloracao" style="display:none">
+                        <div>
+                            <h3>platinado</h3>
+                            <div class="descricao">
+                                <h3>R$ 100,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>120 min</small>
+                            </div>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="servico-item" data-categoria="coloracao" style="display:none">
+                        <div>
+                            <h3>pigmentaçao e tintura</h3>
+                            <div class="descricao">
+                                <h3>A PARTIR DE R$ 20,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>90 min</small>
+                            </div>
+                        </div>
+                        <input type="radio" name="radio-btn">
+                        <div class="radio-custom"></div>
+                    </div>
+                    <div class="servico-item" data-categoria="coloracao" style="display:none">
+                        <div>
+                            <h3>luzes</h3>
+                            <div class="descricao">
+                                <h3>R$ 75,00</h3>
+                                <small><i class="fa-regular fa-clock"></i>120 min</small>
+                            </div>
                         </div>
                         <input type="radio" name="radio-btn">
                         <div class="radio-custom"></div>
                     </div>
                 </div>
-                <button>Continuar</button>
+            </div>
+            <button>Continuar</button>
         </section>
     </main>
     <div id="listaAgendamento"></div>
     <script src="/frontend/js/listaAgendamento.js"></script>
     <script src="/frontend/js/agendamento.js"></script>
 </body>
+
 </html>

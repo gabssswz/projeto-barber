@@ -8,18 +8,25 @@
 
 :root {
     --cor-laranja: #f97316;
-    --cor-laranja-f: #f974164b;
+    --cor-laranja-f: #f9731620;
     --cor-white: #ffffff;
-    --cor-black: #101010;
-    --cor-cinza-escuro: #1a1919;
-    --cor-cinza: #ffffff70;
+    --cor-black: #0d0d0d;
+    --cor-card-bg: #1a1a1a;
+    --cor-card-item: #222222;
+    --cor-cinza: #888888;
+    --cor-cinza-borda: #2a2a2a;
+    --cor-cinza-radio: #555555;
 
+    /* Fontes */
+    --font-titulo: 'Bebas Neue', sans-serif;
+    --font-corpo: 'Montserrat', sans-serif;
+    --font-alt: 'Poppins', sans-serif;
 }
 
 body {
     background: var(--cor-black);
     color: var(--cor-white);
-    font-family: 'Barlow', sans-serif;
+    font-family: var(--font-corpo);
     text-align: center;
 }
 
@@ -27,14 +34,22 @@ i {
     margin-right: 8px;
 }
 
-header > a {
+.voltar {
     display: flex;
     text-decoration: none;
     color: var(--cor-cinza);
     padding: 40px 450px;
 }
+.voltar:hover {
+    color: var(--cor-laranja);
+}
+
+header > img {
+    width: 100px;
+}
+
 h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-titulo);
     font-size: 3em;
     color: var(--cor-laranja);
 }
@@ -49,8 +64,12 @@ h1 {
 
 .steps {
     display: flex;
-    justify-content: space-between;
-    padding: 0 600px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15%;
+    color: var(--cor-cinza);
 }
 
 .step-ativo, .step {
@@ -64,14 +83,15 @@ h1 {
 }
 
 .step-ativo > .step-circulo {
+    color: var(--cor-white);
     background-color: var(--cor-laranja);
 }
 
 .step-circulo {
     width: 45px;
     height: 45px;
-    border: 1px solid var(--cor-laranja);
-    background-color: var(--cor-cinza-escuro);
+    border: 1px solid var(--cor-cinza-borda);
+    background-color: var(--cor-card-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -86,15 +106,11 @@ span {
 }
 
 .div-linha {
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: var(--cor-cinza-escuro);
-    margin: 2rem auto 2rem auto;
-}
-
-header > img {
-    width: 100px;
+    width: 60px;
+    height: 2px;
+    background-color: var(--cor-cinza-borda);
+    align-self: center;
+    margin: 0;
 }
 
 .servicos > h2 {
@@ -102,19 +118,77 @@ header > img {
     font-size: 2em;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 50%;
-    margin: 15px auto;
+.servico-descricao {
+    font-size: small;
+    color: var(--cor-cinza);
+}
+/*Filtros de serviços*/
+.filtros {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    width: 35%; /* mesmo width dos .cards */
+}
+.filtro-btn {
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 999px;
+    border: 2px solid var(--cor-cinza-borda);
+    background: transparent;
+    color: var(--cor-cinza);
+    font-family: var(--font-corpo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.filtro-btn.ativo {
+    background: var(--cor-laranja);
+    border-color: var(--cor-laranja);
+    color: var(--cor-white);
 }
 
+/*Cards*/
+
+.servico-item {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: solid 1px var(--cor-cinza-borda);
+    text-transform: uppercase;
+    background-color: var(--cor-card-bg);
+    text-align: left;
+    padding: 20px;
+    color: var(--cor-white);
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 35%;
+    margin: 15px auto;
+}
+.card-border {
+    border-radius: 8px;
+    border: solid 1px var(--cor-cinza-borda);
+    overflow: hidden;
+}
+
+.card-border h2 {
+    font-size: 14px;
+    font-family: var(--font-corpo);
+    text-transform: uppercase;
+}
+/* Radio button*/
 input {
     appearance: none;
     width: 0;
     height: 0;
 }
-
 .radio-custom {
     display: flex;
     width: 20px;
@@ -124,11 +198,9 @@ input {
     align-items: center;
     justify-content: center;
 }
-
 input:checked + .radio-custom {
     border-color: var(--cor-laranja);
 }
-
 input:checked + .radio-custom::after {
     content: '';
     display: block;
@@ -138,28 +210,21 @@ input:checked + .radio-custom::after {
     border-radius: 50%;
     margin: auto;
 }
-
-.corte, .barba, .corte-barba, .hidratacaoCapilar {
+.descricao {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border: solid 1px var(--cor-laranja-f);
-    text-transform: uppercase;
-    border-radius: 8px;
-    margin: 20px;
-    background-color: var(--cor-cinza-escuro);
-    text-align: left;
-    padding: 20px;
-}
-
-h3 {
-    color: var(--cor-laranja);
-    margin-bottom: 5px;
-}
-
-small {
+    gap: 10px;
+    align-items: center;
     color: var(--cor-cinza);
 }
+.descricao > h3 {
+    color: var(--cor-laranja);
+    margin-bottom: 3px;
+}
+
+.span {
+    color: var(--cor-cinza-radio);
+}
+
 button {
     outline: none;
     border: none;
@@ -168,6 +233,6 @@ button {
     border-radius: 8px;
     font-size: large;
     color: var(--cor-white);
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-corpo);
     background-color: var(--cor-laranja);
 }
