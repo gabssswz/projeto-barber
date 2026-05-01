@@ -152,7 +152,6 @@ span {
 }
 
 /*Cards*/
-
 .servico-item {
     display: flex;
     font-size: 14px;
@@ -183,13 +182,13 @@ span {
     font-family: var(--font-corpo);
     text-transform: uppercase;
 }
-/* Radio button*/
+/* Checkbox */
 input {
     appearance: none;
     width: 0;
     height: 0;
 }
-.radio-custom {
+.checkbox-custom {
     display: flex;
     width: 20px;
     height: 20px;
@@ -198,18 +197,19 @@ input {
     align-items: center;
     justify-content: center;
 }
-input:checked + .radio-custom {
+input:checked + .checkbox-custom {
     border-color: var(--cor-laranja);
+    background-color: var(--cor-laranja);
 }
-input:checked + .radio-custom::after {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    background: var(--cor-laranja);
-    border-radius: 50%;
-    margin: auto;
+input:checked + .checkbox-custom::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
 }
+.servico-item.selecionado {
+    background-color: var(--cor-laranja-f);
+}
+
 .descricao {
     display: flex;
     gap: 10px;
@@ -224,11 +224,48 @@ input:checked + .radio-custom::after {
 .span {
     color: var(--cor-cinza-radio);
 }
+/* Rodape do preço total */
+#rodape-resumo {
+    display: none;
+    font-family: var(--font-corpo);
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 15px 20px;
+    background-color: var(--cor-card-bg);
+    border: 1px solid var(--cor-laranja-f);
+    border-radius: 8px;
+    margin: 10px 0;
+}
+#rodape-resumo > div {
+    display: flex;
+    flex-direction: column;
+}
+.resumo-label {
+    color: var(--cor-cinza);
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 11px;
+    display: block;
+}
+.resumo-direita {
+    text-align: right;
+}
+#resumo-total {
+    color: var(--cor-laranja);
+    font-weight: 700;
+    font-size: 18px;
+}
+#resumo-qtd {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
 
+/* Botão de continuar */ 
 button {
     outline: none;
     border: none;
-    width: 40%;
+    width: 35%;
     padding: 15px 0;
     border-radius: 8px;
     font-size: large;

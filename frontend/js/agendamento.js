@@ -1,3 +1,4 @@
+/* Alterar entre as abas de filtro */
 const filtros = document.querySelectorAll('.filtro-btn');
 const cards = document.querySelectorAll('.servico-item');
 
@@ -17,13 +18,55 @@ filtros.forEach(btn => {
         });
     });
 });
-
+/* Adiciona o checkbox e o card fica laranja */
 document.querySelectorAll('.servico-item').forEach(card => {
-    card.addEventListener('click', function() {
-        const input = this.querySelector('input[type="radio"]');
-        input.checked = true;
+    card.addEventListener('click', function(e) {
+        if (e.target.tagName === 'INPUT') return;
+
+        const input = this.querySelector('input[type="checkbox"]');
+        input.checked = !input.checked;
+
+        if (input.checked) {
+            this.classList.add('selecionado');
+        } else {
+            this.classList.remove('selecionado');
+        }
+
+        atualizarResumo();
     });
 });
+
+/* Rodape do agentamento para ver o valor total*/
+function atualizarResumo() {
+    const marcados = document.querySelectorAll('input[type="checkbox"]:checked');
+
+    let total = 0;
+    let minutos = 0;
+
+    marcados.forEach(input => {
+        const card = input.closest('.servico-item');
+
+        // Pega o preço — você vai precisar adicionar data-preco e data-tempo no HTML
+        total += Number(card.dataset.preco);
+        minutos += Number(card.dataset.tempo);
+    });
+
+    // Atualiza o rodapé na tela
+    document.getElementById('resumo-qtd').textContent =
+        `${marcados.length} serviço(s) · ${minutos} min`;
+    document.getElementById('resumo-total').textContent =
+        `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+/* Invisivel até selecionar um serviço */
+
+const rodape = document.getElementById('rodape-resumo');
+
+if (marcados.length > 0) {
+    rodape.style.display = 'flex';
+} else {
+    rodape.style.display = 'none';
+}
+}
 
 /*
 document.getElementById('formAgendamento').addEventListener('submit', async (e) => {
