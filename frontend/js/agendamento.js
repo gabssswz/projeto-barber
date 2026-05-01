@@ -35,6 +35,56 @@ document.querySelectorAll('.servico-item').forEach(card => {
         atualizarResumo();
     });
 });
+/* Marcar o chebox do barbeiro */
+document.querySelectorAll('.barbeiro-info').forEach(card => {
+    card.addEventListener('click', function() {
+        // Remove selecionado de todos
+        document.querySelectorAll('.barbeiro-info').forEach(c => {
+            c.classList.remove('selecionado');
+            c.querySelector('.radio-custom').classList.remove('marcado');
+        });
+
+        // Marca o clicado
+        const input = this.querySelector('input[type="radio"]');
+        input.checked = true;
+        this.classList.add('selecionado');
+        this.querySelector('.radio-custom').classList.add('marcado');
+    });
+});
+
+/* Muda os steps quando apertar o botão continuar */
+const botao = document.querySelector('.btn-continuar');
+const servicos = document.querySelector('.servicos');
+const barbeiro = document.querySelector('.section-barbeiro');
+const circulos = document.querySelectorAll('.step-circulo');
+const steps = document.querySelectorAll('.step-ativo, .step');
+
+botao.addEventListener('click', function() {
+    servicos.style.display = 'none';
+    barbeiro.style.display = 'block';
+    
+    steps[0].classList.remove('step-ativo');
+    steps[0].classList.add('step-concluido');
+    steps[1].classList.remove('step');
+    steps[1].classList.add('step-ativo');
+    
+    circulos[0].textContent = '✓';
+});
+
+/* Voltar steps */
+const btnVoltar = document.querySelector('.btn-voltar');
+
+btnVoltar.addEventListener('click', function() {
+    barbeiro.style.display = 'none';
+    servicos.style.display = 'block';
+    
+    steps[0].classList.remove('step-concluido');
+    steps[0].classList.add('step-ativo');
+    steps[1].classList.remove('step-ativo');
+    steps[1].classList.add('step');
+    
+    circulos[0].textContent = '1';
+});
 
 /* Rodape do agentamento para ver o valor total*/
 function atualizarResumo() {
@@ -65,6 +115,14 @@ if (marcados.length > 0) {
     rodape.style.display = 'flex';
 } else {
     rodape.style.display = 'none';
+}
+
+const btnContinuar = document.querySelector('.btn-continuar');
+
+if (marcados.length > 0) {
+    btnContinuar.disabled = false;
+} else {
+    btnContinuar.disabled = true;
 }
 }
 
