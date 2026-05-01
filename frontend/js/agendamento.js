@@ -133,13 +133,14 @@ document.getElementById('formAgendamento').addEventListener('submit', async (e) 
     try {
         const dados = {
             nome: document.getElementById('nome').value,
-            barber: document.getElementById('barbeiro').value,
+            barber: document.getElementById('barber').value,
             telefone: document.getElementById('telefone').value,
             servico: document.getElementById('servico').value,
             dataAgendamento: document.getElementById('dataAgendamento').value,
             horaAgendamento: document.getElementById('horaAgendamento').value,
             observacoes: document.getElementById('observacoes').value
         };
+
 
         const res = await fetch('http://localhost:3000/api/agendamento', {
             method: "POST",
