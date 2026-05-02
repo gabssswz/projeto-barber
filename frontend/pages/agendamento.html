@@ -193,7 +193,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-continuar" disabled>Continuar</button>
+            <button class="avancar-step" data-proxima=".section-barbeiro" data-step="1" disabled>Continuar</button>
         </section>
         <section class="section-barbeiro">
             <h2>Escolha o Barbeiro</h2>
@@ -222,7 +222,53 @@
                         <div class="radio-custom"></div>
                     </div>
                 </div>
-                <button class="voltar-steps"></button>
+                <div class="barbeiro-info">
+                    <div class="barbeiro-foto">
+                        <img src="Imagens/Lucas Nunes.jpg" alt="Foto do  Barbeiro">
+                    </div>
+                    <div class="barbeiro-nome">
+                        <h3>Luisinho</h3>
+                    </div>
+                    <div class="barbeiro-radio">
+                        <input type="radio" name="barbeiro">
+                        <div class="radio-custom"></div>
+                    </div>
+                </div>
+                <div class="barbeiro-info">
+                    <div class="barbeiro-foto">
+                        <img src="Imagens/Lucas Nunes.jpg" alt="Foto do  Barbeiro">
+                    </div>
+                    <div class="barbeiro-nome">
+                        <h3>Luisinho</h3>
+                    </div>
+                    <div class="barbeiro-radio">
+                        <input type="radio" name="barbeiro">
+                        <div class="radio-custom"></div>
+                    </div>
+                </div>
+                <div class="botoes">
+                    <button class="btn-voltar-steps">Voltar</button>
+                    <button class="avancar-step" data-proxima=".section-data" data-step="2" disabled>Continuar</button>
+                </div>
+            </div>
+        </section>
+        <section class="section-data">
+            <div class="data-titulo">
+                <h2>data e horário</h2>
+            </div>
+            <div class="calendario">
+                <p>
+                    <i class="fa-regular fa-calendar"></i> SELECIONE A DATA
+                </p>
+                <div class="grid-datas">
+                </div>
+            </div>
+            <div class="horario">
+                <p>
+                    <i class="fa-regular fa-clock"></i> SELECIONE O HORÁRIO
+                </p>
+                <div class="grid-datas">
+                </div>
             </div>
         </section>
     </main>

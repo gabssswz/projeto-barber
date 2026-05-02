@@ -1,3 +1,38 @@
+/* Gera os próximos 14 dias dinamicamente no calendário */
+const grid = document.querySelector('.grid-datas');
+
+const meses = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+const diasSemana = ['DOM','SEG','TER','QUA','QUI','SEX','SÁB'];
+
+for (let i = 0; i < 14; i++) {
+    // 1. Cria a data de cada dia
+    const dia = new Date();
+    dia.setDate(dia.getDate() + i);
+
+    // 2. Cria o card
+    const card = document.createElement('div');
+    card.classList.add('dia-card');
+
+    // 3. Verifica se é e domingo
+    if (dia.getDay() === 0) {
+    card.classList.add('domingo');
+    card.innerHTML = `
+        <span class="dia-semana">DOM</span>
+        <span class="dia-numero">${dia.getDate()}</span>
+        <span class="dia-mes">FECHADO</span>
+    `;
+    } else { // 4. Cria os outros cards do mês
+    card.innerHTML = `
+        <span class="dia-semana">${diasSemana[dia.getDay()]}</span>
+        <span class="dia-numero">${dia.getDate()}</span>
+        <span class="dia-mes">${meses[dia.getMonth()]}</span>
+    `;
+    }
+
+    // 5. Adiciona o card no grid
+    grid.appendChild(card);
+}
+
 /* Alterar entre as abas de filtro */
 const filtros = document.querySelectorAll('.filtro-btn');
 const cards = document.querySelectorAll('.servico-item');
@@ -20,7 +55,7 @@ filtros.forEach(btn => {
 });
 /* Adiciona o checkbox e o card fica laranja */
 document.querySelectorAll('.servico-item').forEach(card => {
-    card.addEventListener('click', function(e) {
+    card.addEventListener('click', function (e) {
         if (e.target.tagName === 'INPUT') return;
 
         const input = this.querySelector('input[type="checkbox"]');
@@ -35,9 +70,9 @@ document.querySelectorAll('.servico-item').forEach(card => {
         atualizarResumo();
     });
 });
-/* Marcar o chebox do barbeiro */
+/* Marcar o radio do barbeiro */
 document.querySelectorAll('.barbeiro-info').forEach(card => {
-    card.addEventListener('click', function() {
+    card.addEventListener('click', function () {
         // Remove selecionado de todos
         document.querySelectorAll('.barbeiro-info').forEach(c => {
             c.classList.remove('selecionado');
@@ -49,40 +84,45 @@ document.querySelectorAll('.barbeiro-info').forEach(card => {
         input.checked = true;
         this.classList.add('selecionado');
         this.querySelector('.radio-custom').classList.add('marcado');
+
+        // ← ADICIONA AQUI ↓
+        const btnAvancar = document.querySelector('.section-barbeiro .avancar-step');
+        btnAvancar.disabled = false;
     });
 });
 
-/* Muda os steps quando apertar o botão continuar */
-const botao = document.querySelector('.btn-continuar');
-const servicos = document.querySelector('.servicos');
-const barbeiro = document.querySelector('.section-barbeiro');
-const circulos = document.querySelectorAll('.step-circulo');
-const steps = document.querySelectorAll('.step-ativo, .step');
+/* Avança entre as seções */
+document.querySelectorAll('.avancar-step').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const proxima = this.dataset.proxima;
+        const step = Number(this.dataset.step);
 
-botao.addEventListener('click', function() {
-    servicos.style.display = 'none';
-    barbeiro.style.display = 'block';
-    
-    steps[0].classList.remove('step-ativo');
-    steps[0].classList.add('step-concluido');
-    steps[1].classList.remove('step');
-    steps[1].classList.add('step-ativo');
-    
-    circulos[0].textContent = '✓';
+        this.closest('section').style.display = 'none';
+        document.querySelector(proxima).style.display = 'block';
+
+        steps[step - 1].classList.remove('step-ativo');
+        steps[step - 1].classList.add('step-concluido');
+        steps[step].classList.remove('step');
+        steps[step].classList.add('step-ativo');
+
+        circulos[step - 1].textContent = '✓';
+    });
 });
 
 /* Voltar steps */
-const btnVoltar = document.querySelector('.btn-voltar');
+const btnVoltar = document.querySelector('.btn-voltar-steps');
+const circulos = document.querySelectorAll('.step-circulo');
+const steps = document.querySelectorAll('.step-ativo, .step');
 
-btnVoltar.addEventListener('click', function() {
-    barbeiro.style.display = 'none';
-    servicos.style.display = 'block';
-    
+btnVoltar.addEventListener('click', function () {
+    document.querySelector('.section-barbeiro').style.display = 'none';
+    document.querySelector('.servicos').style.display = 'block';
+
     steps[0].classList.remove('step-concluido');
     steps[0].classList.add('step-ativo');
     steps[1].classList.remove('step-ativo');
     steps[1].classList.add('step');
-    
+
     circulos[0].textContent = '1';
 });
 
@@ -107,23 +147,23 @@ function atualizarResumo() {
     document.getElementById('resumo-total').textContent =
         `R$ ${total.toFixed(2).replace('.', ',')}`;
 
-/* Invisivel até selecionar um serviço */
+    /* Invisivel até selecionar um serviço */
 
-const rodape = document.getElementById('rodape-resumo');
+    const rodape = document.getElementById('rodape-resumo');
 
-if (marcados.length > 0) {
-    rodape.style.display = 'flex';
-} else {
-    rodape.style.display = 'none';
-}
+    if (marcados.length > 0) {
+        rodape.style.display = 'flex';
+    } else {
+        rodape.style.display = 'none';
+    }
 
-const btnContinuar = document.querySelector('.btn-continuar');
+    const btnContinuar = document.querySelector('.servicos .avancar-step');
 
-if (marcados.length > 0) {
-    btnContinuar.disabled = false;
-} else {
-    btnContinuar.disabled = true;
-}
+    if (marcados.length > 0) {
+        btnContinuar.disabled = false;
+    } else {
+        btnContinuar.disabled = true;
+    }
 }
 
 /*

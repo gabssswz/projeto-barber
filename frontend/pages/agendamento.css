@@ -276,7 +276,7 @@ button {
     border: none;
     width: 35%;
     padding: 15px 0;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: large;
     color: var(--cor-white);
     font-family: var(--font-corpo);
@@ -356,4 +356,95 @@ button {
 }
 .barbeiro-info.selecionado .barbeiro-foto img {
     border-color: var(--cor-laranja);
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn-voltar-steps {
+    background-color: var(--cor-black);
+    border: white solid 2px;
+}
+
+.btn-voltar-steps, 
+.avancar-step {
+    flex: 1;
+    margin-top: 30px;
+}
+
+.section-data {
+    display: none;
+}
+
+.data-titulo {
+    margin: 40px 0;
+    font-family: var(--font-alt);
+    text-transform: uppercase;
+    font-size: 1em;
+    text-align: center;
+    color: var(--cor-white);
+}
+.calendario {
+    width: 35%;
+    margin: 0 auto;
+}
+.calendario p {
+    text-align: left;
+    color: var(--cor-laranja);
+}
+.grid-datas {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    margin-top: 15px;
+    gap: 10px;
+}
+.dia-card {
+    border: var(--cor-cinza-borda) solid 2px;
+    background-color: var(--cor-card-bg);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.dia-card:not(.domingo):hover {
+    border: var(--cor-laranja) solid 2px;
+    background-color: var(--cor-laranja-f);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.dia-card.selecionado {
+    background-color: var(--cor-laranja);
+    border-color: var(--cor-laranja);
+    color: var(--cor-black);
+    font-weight: 700;
+}
+.domingo {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.domingo .dia-mes {
+    color: var(--cor-laranja);
+}
+.dia-numero{
+    font-family: var(--font-alt);
+    font-size: 17px;
+}
+.dia-semana, 
+.dia-mes {
+    font-family: var(--font-alt);
+    margin-bottom: 10px;
+    color: var(--cor-cinza);
+}
+.horario {
+    width: 35%;
+    margin: 0 auto;
+}
+.horario p  {
+    margin-top: 15px;
+    text-align: left;
+    color: var(--cor-laranja);
 }
