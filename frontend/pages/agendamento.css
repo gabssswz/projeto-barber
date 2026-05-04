@@ -373,12 +373,12 @@ button {
     margin: 0 auto;
 }
 
-.btn-voltar-steps {
+.btn-voltar {
     background-color: var(--cor-black);
     border: white solid 2px;
 }
 
-.btn-voltar-steps, 
+.btn-voltar, 
 .avancar-step {
     flex: 1;
     margin-top: 30px;
@@ -414,7 +414,9 @@ button {
     border: var(--cor-cinza-borda) solid 2px;
     background-color: var(--cor-card-bg);
     border-radius: 10px;
-    padding: 10px;
+    width: auto;
+    height: auto;
+    padding: 8px 6px;
     text-align: center;
 }
 .dia-card:not(.domingo):hover {
@@ -426,7 +428,7 @@ button {
 .dia-card.selecionado {
     background-color: var(--cor-laranja);
     border-color: var(--cor-laranja);
-    color: var(--cor-black);
+    color: var(--cor-white);
     font-weight: 700;
 }
 .domingo {
@@ -454,4 +456,25 @@ button {
     margin-top: 15px;
     text-align: left;
     color: var(--cor-laranja);
+}
+.horario-btn {
+    border: var(--cor-cinza-borda) solid 2px;
+    background-color: var(--cor-card-bg);
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    padding: 8px 6px;
+    text-align: center;
+}
+.horario-btn:hover {
+    border: var(--cor-laranja) solid 2px;
+    background-color: var(--cor-laranja-f);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.horario-btn.selecionado {
+    background-color: var(--cor-laranja);
+    border-color: var(--cor-laranja);
+    color: var(--cor-white);
+    font-weight: 700;
 }
