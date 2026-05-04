@@ -17,172 +17,182 @@
         <img src="Imagens/Logo_sem_fundo.png" alt="Logo Elite barbearia">
         <h1>Agendar Horário</h1>
         <div class="section-divider"></div>
-        <nav class="steps">
-            <div class="step-ativo">
+        <nav class="steps" aria-label="Progresso do Agendamento">
+            <div class="step-ativo" id="step-1">
                 <div class="step-circulo">1</div>
                 <span>Serviço</span>
             </div>
             <div class="div-linha"></div>
-            <div class="step">
+            <div class="step" id="step-2">
                 <div class="step-circulo">2</div>
                 <span>Barbeiro</span>
             </div>
             <div class="div-linha"></div>
-            <div class="step">
+            <div class="step" id="step-3">
                 <div class="step-circulo">3</div>
                 <span>Data/hora</span>
             </div>
             <div class="div-linha"></div>
-            <div class="step">
+            <div class="step" id="step-4">
                 <div class="step-circulo">4</div>
                 <span>Dados</span>
             </div>
         </nav>
     </header>
     <main>
-        <section class="servicos">
+        <section class="servicos" id="section-servicos">
             <h2>Selecione os serviços</h2>
-            <div class="servico-descricao">
-                <p>Você pode escolher mais de um serviço</p>
-            </div>
-            <div class="filtros">
-                <button class="filtro-btn ativo" data-categoria="cortes">Cortes</button>
-                <button class="filtro-btn" data-categoria="estetica">Estética</button>
-                <button class="filtro-btn" data-categoria="tratamentos">Tratamentos</button>
-                <button class="filtro-btn" data-categoria="coloracao">Coloração</button>
+            <p class="servico-descricao">Você pode escolher mais de um serviço
+            </p>
+            <div class="filtros" role="tablist" aria-label="Categoria de serviços">
+                <button class="filtro-btn ativo" data-categoria="cortes" role="tab" aria-selected="true">Cortes</button>
+                <button class="filtro-btn" data-categoria="estetica" role="tab" aria-selected="false">Estética</button>
+                <button class="filtro-btn" data-categoria="tratamentos" role="tab" aria-selected="false">Tratamentos</button>
+                <button class="filtro-btn" data-categoria="coloracao" role="tab" aria-selected="false">Coloração</button>
             </div>
             <div class="cards">
                 <div class="card-border">
-                    <div class="servico-item" data-categoria="cortes" data-preco="40" data-tempo="30">
+                    <label class="servico-item" data-categoria="cortes" data-preco="40" data-tempo="30" data-nome="Corte de Cabelo">
                         <div>
                             <h3>corte de cabelo</h3>
                             <div class="descricao">
-                                <h3>R$ 40,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>30 min</small>
+                                <span class="preco">R$ 40,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>30 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="cortes" data-preco="35" data-tempo="30">
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Corte de Cabelo">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+
+                        </label>
+                    <label class="servico-item" data-categoria="cortes" data-preco="35" data-tempo="30" data-nome="Barba">
                         <div>
-                            <h3>barba</h3>
+                            <h3>Barba</h3>
                             <div class="descricao">
-                                <h3>R$ 35,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>30 min</small>
+                                <span class="preco">R$ 35,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>30 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="cortes" data-preco="30" data-tempo="20">
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Barba">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                        </label>
+
+                    <label class="servico-item" data-categoria="cortes" data-preco="30" data-tempo="20" data-nome="Cavanhaque">
                         <div>
                             <h3>cavanhaque</h3>
                             <div class="descricao">
-                                <h3>R$ 30,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>20 min</small>
+                                <span class="preco">R$ 30,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>20 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="cortes" data-preco="15" data-tempo="10">
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Cavanhaque">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                        </label>
+
+                    <label class="servico-item" data-categoria="cortes" data-preco="15" data-tempo="10" data-nome="Pezinho" >
                         <div>
-                            <h3>acabamento (pezinho)</h3>
+                            <h3>Acabamento (Pezinho)</h3>
                             <div class="descricao">
-                                <h3>R$ 15,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>10 min</small>
+                                <span class="preco">R$ 15,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>10 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="estetica" style="display:none" data-preco="80"
-                        data-tempo="60">
+                        <input type="checkbox" name="servicos" aria-label="Pezinho/Acabamento">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                        </label>
+
+                    <label class="servico-item" data-categoria="estetica" data-preco="80" data-tempo="60" data-nome="Hidratacao Capilar" style="display:none">
                         <div>
                             <h3>hidratação capilar</h3>
                             <div class="descricao">
-                                <h3>R$ 80,00</h3>
+                                <span class="preco">R$ 80,00</span>
                                 <small><i class="fa-regular fa-clock"></i>60 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="estetica" style="display:none" data-preco="20"
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Hidratacao Capilar">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                    </label>
+
+                    <label class="servico-item" data-categoria="estetica" style="display:none" data-preco="20" data-nome="Sobrancelha"
                         data-tempo="15">
                         <div>
                             <h3>sobrancelha</h3>
                             <div class="descricao">
-                                <h3>R$ 20,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>15 min</small>
+                                <span class="preco">R$ 20,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>15 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="tratamentos" style="display:none" data-preco="20"
-                        data-tempo="45">
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Sobrancelha">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                    </label>
+
+                    <label class="servico-item" data-categoria="tratamentos" style="display:none" data-preco="20"
+                        data-tempo="45" data-nome="Terapia Capilar">
                         <div>
-                            <h3>terapia capilar</h3>
+                            <h3>Terapia Capilar</h3>
                             <div class="descricao">
-                                <h3>R$ 20,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>45 min</small>
+                                <span class="preco">R$ 20,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>45 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="tratamentos" style="display:none" data-preco="70"
-                        data-tempo="60">
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Terapia Capilar">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                    </label>
+
+                    <label class="servico-item" data-categoria="tratamentos" style="display:none" data-preco="70"
+                        data-tempo="60" data-nome="Botox">
                         <div>
                             <h3>botox</h3>
                             <div class="descricao">
-                                <h3>R$ 70,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>60 min</small>
+                                <span class="preco">R$ 70,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>60 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="coloracao" style="display:none" data-preco="100"
-                        data-tempo="120">
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Botox">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                    </label>
+
+                    <label class="servico-item" data-categoria="coloracao" style="display:none" data-preco="100"
+                        data-tempo="120" data-nome="Platinado">
                         <div>
                             <h3>platinado</h3>
                             <div class="descricao">
-                                <h3>R$ 100,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>120 min</small>
+                                <span class="preco">R$ 100,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>120 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="coloracao" style="display:none" data-preco="20"
-                        data-tempo="90">
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Platinado">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                    </label>
+
+                    <label class="servico-item" data-categoria="coloracao" style="display:none" data-preco="20"
+                        data-tempo="90" data-nome="Pigmentacao e Tintura">
                         <div>
                             <h3>pigmentaçao e tintura</h3>
                             <div class="descricao">
-                                <h3>A PARTIR DE R$ 20,00</h3>
+                                <span>A PARTIR DE R$ 20,00</span>
                                 <small><i class="fa-regular fa-clock"></i>90 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
-                    <div class="servico-item" data-categoria="coloracao" style="display:none" data-preco="75"
+                        <input type="checkbox" name="servicos" aria-label="Pigmentacao e Tintura">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                    </label>
+
+                    <label class="servico-item" data-categoria="coloracao" style="display:none" data-preco="75" data-nome="Luzes"
                         data-tempo="120">
                         <div>
                             <h3>luzes</h3>
                             <div class="descricao">
-                                <h3>R$ 75,00</h3>
-                                <small><i class="fa-regular fa-clock"></i>120 min</small>
+                                <span>R$ 75,00</span>
+                                <small><i class="fa-regular fa-clock" aria-hidden="true"></i>120 min</small>
                             </div>
                         </div>
-                        <input type="checkbox" name="servicos">
-                        <div class="checkbox-custom"></div>
-                    </div>
+                        <input type="checkbox" name="servicos" aria-label="Selecionar Luzes">
+                        <div class="checkbox-custom" aria-hidden="true"></div>
+                    </label>
+
                 </div>
-                <div id="rodape-resumo">
+
+                <div id="rodape-resumo" style="display: none;" aria-live="polite">
                     <div>
                         <small class="resumo-label">Selecionados</small>
                         <span id="resumo-qtd"></span>
@@ -192,13 +202,17 @@
                         <span id="resumo-total">R$ 0,00</span>
                     </div>
                 </div>
+
             </div>
-            <button class="avancar-step" data-proxima=".section-barbeiro" data-step="1" disabled>Continuar</button>
+
+            <button class="avancar-step" data-proxima="#section-barbeiro" data-step="1" disabled>Continuar</button>
+
         </section>
-        <section class="section-barbeiro">
+
+        <section class="section-barbeiro" id="section-barbeiro" style="display: none;">
             <h2>Escolha o Barbeiro</h2>
             <div class="barbeiro-conteiner">
-                <div class="barbeiro-info">
+                <label class="barbeiro-info" data-id="1" data-nome="Lucas Nunes">
                     <div class="barbeiro-foto">
                         <img src="Imagens/Lucas Nunes.jpg" alt="Foto do Lucas Nunes Barbeiro">
                     </div>
@@ -206,74 +220,194 @@
                         <h3>Lucas Nunes</h3>
                     </div>
                     <div class="barbeiro-radio">
-                        <input type="radio" name="barbeiro">
-                        <div class="radio-custom"></div>
+                        <input type="radio" name="barbeiro" value="1" aria-label="Selecionar Lucas Nunes">
+                        <div class="radio-custom" aria-hidden="true"></div>
                     </div>
-                </div>
-                <div class="barbeiro-info">
+                </label>
+
+                <label class="barbeiro-info" data-id="2" data-nome="Luisinho">
                     <div class="barbeiro-foto">
-                        <img src="Imagens/Lucas Nunes.jpg" alt="Foto do  Barbeiro">
+                        <img src="Imagens/Lucas Nunes.jpg" alt="Foto do  Luisinho">
                     </div>
                     <div class="barbeiro-nome">
                         <h3>Luisinho</h3>
                     </div>
                     <div class="barbeiro-radio">
-                        <input type="radio" name="barbeiro">
-                        <div class="radio-custom"></div>
+                        <input type="radio" name="barbeiro" value="2" aria-label="Selecionar Luisinho">
+                        <div class="radio-custom" aria-hidden="true"></div>
                     </div>
-                </div>
-                <div class="barbeiro-info">
+                </label>
+                <label class="barbeiro-info" data-id="3" data-nome="Luisinho">
                     <div class="barbeiro-foto">
-                        <img src="Imagens/Lucas Nunes.jpg" alt="Foto do  Barbeiro">
+                        <img src="Imagens/Lucas Nunes.jpg" alt="Foto do Barbeiro">
                     </div>
                     <div class="barbeiro-nome">
                         <h3>Luisinho</h3>
                     </div>
                     <div class="barbeiro-radio">
-                        <input type="radio" name="barbeiro">
+                        <input type="radio" name="barbeiro" value="3">
                         <div class="radio-custom"></div>
                     </div>
+                </label>
+
                 </div>
-                <div class="barbeiro-info">
+
+                    <label class="barbeiro-info" data-id="4" data-nome="Luisinho">
                     <div class="barbeiro-foto">
-                        <img src="Imagens/Lucas Nunes.jpg" alt="Foto do  Barbeiro">
+                        <img src="Imagens/Lucas Nunes.jpg" alt="Foto do Barbeiro">
                     </div>
                     <div class="barbeiro-nome">
                         <h3>Luisinho</h3>
                     </div>
                     <div class="barbeiro-radio">
-                        <input type="radio" name="barbeiro">
+                        <input type="radio" name="barbeiro" value="3">
                         <div class="radio-custom"></div>
                     </div>
-                </div>
+                </label>
+
                 <div class="botoes">
-                    <button class="btn-voltar-steps">Voltar</button>
-                    <button class="avancar-step" data-proxima=".section-data" data-step="2" disabled>Continuar</button>
+                    <button class="btn-voltar" data-voltar="#section-servicos" data-step="2">Voltar</button>
+                    <button class="avancar-step" data-proxima="#section-data" data-step="2" disabled>Continuar</button>
                 </div>
             </div>
         </section>
-        <section class="section-data">
+
+        <section class="section-data" id="section-data" style="display: none;">
             <div class="data-titulo">
-                <h2>data e horário</h2>
+                <h2>Data e Horário</h2>
             </div>
             <div class="calendario">
                 <p>
-                    <i class="fa-regular fa-calendar"></i> SELECIONE A DATA
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i> SELECIONE A DATA
                 </p>
-                <div class="grid-datas">
+                <div class="grid-datas" id="grid-datas" role="list" aria-label="Datas Disponiveis"> </div>
+            </div>
+            <div class="horario" id="secao-horarios" style="display: none;">
+                <p>
+                    <i class="fa-regular fa-clock" aria-hidden="true"></i> SELECIONE O HORÁRIO
+                </p>
+                <div class="grid-datas" id="grid-horarios" role="list" aria-label="Horarios Disponiveis">
+                </div>
+
+                <div class="botoes">
+                    <button class="btn-voltar" data-voltar="#section-barbeiro" data-step="3">
+                        <i class="fa-solid fa-arrow-left"></i> Voltar
+                    </button>
+                    <button class="avancar-step" data-proxima="#section-dados" data-step="3" disabled> Continuar
+                    </button>
                 </div>
             </div>
-            <div class="horario">
-                <p>
-                    <i class="fa-regular fa-clock"></i> SELECIONE O HORÁRIO
-                </p>
-                <div class="grid-datas">
+        </section>
+
+        <section class="section-dados" id="section-dados" style="display: none;">
+            <h2>Seus Dados</h2>
+            <p class="servico-descricao"> Quase lá! Preeencha suas informações </p>
+
+            <div class="form-dados">
+                <div class="campo">
+                    <label for="input-nome">
+                        <i class="fa-regular fa-user" aria-hidden="true"></i> Nome Completo
+                    </label>
+                    <input type="text" id="input-nome" name="nome" placeholder="Seu Nome" autocomplete="name" required>
+                </div>
+
+                <div class="campo">
+                    <label for="input-telefone">
+                        <i class="fa-solid fa-whatsapp" aria-hidden="true"></i>
+                    </label>
+                    <input type="tel" id="input-telefone" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel" maxlength="15" required>
+                </div>
+
+                <div class="resumo-agendamento" id="resumo-final">
+                    <h3>Resumo Agendamento</h3>
+                        <div class="resumo-linha">
+                            <span><i class="fa-solid fa-scissors"></i>Serviços</span>
+                            <span id="resumo-servicos-lista"></span>
+                        </div>
+
+                        <div class="resumo-linha">
+                            <span><i class="fa-solid fa-user-tie"></i>Barbeiro</span>
+                            <span id="resumo-barbeiro-nome"></span>
+                        </div>
+
+                        <div class="resumo-linha">
+                            <span><i class="fa-regular fa-calendar"></i>Data</span>
+                            <span id="resumo-data-hora"></span>
+                        </div>
+
+                        <div>
+                        
+                            <div class="resumo-linha resumo-total-linha">
+                                <span><i class="fa-solid fa-tag"></i>Total</span>
+                                <span id="resumo-valor-final">R$0,00</span>
+                            </div>
+                        </div>
+                        <div class="botoes">
+    <button class="btn-voltar" data-voltar="#section-data" data-step="4">
+        <i class="fa-solid fa-arrow-left"></i> Voltar
+    </button>
+
+    <button id="btn-confirmar" disabled>
+        Confirmar Agendamento
+    </button>
+</div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div id="modal-sucesso" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" style="display: none;">
+        <div class="modal-overlay" id="modal-overlay"></div>
+
+        <div class="modal-conteudo">
+            <div class="modal-check">
+                <svg viewBox="0 0 52 52" aria-hidden="true">
+                    <circle class="check-circulo" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="check-marca" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+            </div>
+
+            <h2 id="modal-titulo"> Agendamento Confirmado! </h2>
+            <p class="modal-subtitulo">
+                Te esperamos na barbearia!
+            </p>
+
+            <div class="modal-resumo">
+                <div class="modal-linha">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="modal-nome"></span>
+                </div>
+                <div class="modal-linha">
+                    <i class="fa-solid fa-scissors"></i>
+                    <span id="modal-servicos"></span>
+                </div>
+                <div class="modal-linha">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span id="modal-barbeiro"></span>
+                </div>
+                <div class="modal-linha">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="modal-data"></span>
+                </div>
+                <div class="modal-linha modal-total">
+                    <i class="fa-solid fa-tag"></i>
+                    <span id="modal-total">R$0,00</span>
+                </div>
+            </div>
+
+            <div class="modal-botoes">
+                 <a id="btn-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="btn-wpp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                 </a>
+                 <button id="btn-fechar-modal" onclick="fecharModal()">Fechar</button>
+            </div>
+
+        </div>
+
+    </div>
+
     <div id="listaAgendamento"></div>
-    <script src="/frontend/js/listaAgendamento.js"></script>
+
     <script src="/frontend/js/agendamento.js"></script>
 </body>
 

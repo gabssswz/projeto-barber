@@ -221,9 +221,16 @@ input:checked + .checkbox-custom::after {
     align-items: center;
     color: var(--cor-cinza);
 }
-.descricao > h3 {
+.descricao > h3{
     color: var(--cor-laranja);
     margin-bottom: 3px;
+}
+
+.preco {
+    color: var(--cor-laranja);
+    margin-bottom: 3px;
+    font-size:1rem;
+    font-weight: bold;
 }
 
 .span {
