@@ -345,7 +345,7 @@ function mostrarModalSucesso() {
     )
 
     //TODO: trocar o numero pro numero real da elite barbearia
-    document.getElementById('btn-whatsapp').href = `https://wa.me/559999999999?text=${msg}`
+    document.getElementById('btn-whatsapp').href = `https://wa.me/5535987047873?text=${msg}`
     
     const modal = document.getElementById('modal-sucess');
     modal.style.display = 'flex';
