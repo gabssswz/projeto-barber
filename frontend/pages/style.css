@@ -1249,8 +1249,8 @@ body.modal-open {
 
 .contato-emblem-wrap {
     flex-shrink: 0;
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
 }
 .contato-emblem {
     width: 100%;
@@ -1506,6 +1506,6 @@ footer > small {
 }
 
 .whatsapp-card img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
