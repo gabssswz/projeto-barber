@@ -1227,8 +1227,8 @@ body.modal-open {
     background: #1A1A1A;
     border: 1px solid rgba(249, 115, 22, 0.2);
     border-radius: 12px;
-    padding: 45px;
-    width: 240px;
+    padding: 50px;
+    width: 300px;
     transition: 0.3s;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -1286,22 +1286,42 @@ body.modal-open {
    Contato Responsivo
    ========================= */
 @media (max-width: 768px) {
+
+    .contato-section {
+        padding: 7rem 1rem;
+    }
+
+    .contato-wrapper {
+        padding: 0 3rem;
+    }
+
+    .contato-title {
+        font-size: 3rem;
+    } 
+
     .contato-cards {
         flex-direction: column;
         align-items: center;
         margin-bottom: 0;
-        gap: 0px;
+        padding: 0;
+        gap: 20px;
     }
 
     .contato-card {
         width: 90%;
-        max-width: 320px;
-        padding: 30px;
-        margin-bottom: 0;
+        max-width: 350px;
+        padding: 25px;
+        height: 260px;
+        margin: 0;
     }
 
     .contato-card-content {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        gap: 8px;
     }
 }
 
@@ -1509,3 +1529,18 @@ footer > small {
     width: 35px;
     height: 35px;
 }
+
+@media (max-width: 768px) {
+    .whatsapp-card {
+        width: 55px;
+        height: 55px;
+        bottom: 15px;
+        right: 8px;
+    }
+
+    .whatsapp-card img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
