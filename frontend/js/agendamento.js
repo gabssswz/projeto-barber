@@ -314,7 +314,7 @@ document.getElementById('btn-confirmar').addEventListener('click',async () => {
             dataAgendamento: agendamento.data,
             horaAgendamento: agendamento.hora
         };
-        const res = await fetch ('/api/agendamento', {
+        const res = await fetch ('http://localhost:3000/api/agendamento', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(payload)
