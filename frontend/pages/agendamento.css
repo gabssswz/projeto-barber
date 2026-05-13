@@ -38,7 +38,7 @@ i {
     display: flex;
     text-decoration: none;
     color: var(--cor-cinza);
-    padding: 10px 450px;
+    padding: 10px 20px;
 }
 .voltar:hover {
     color: var(--cor-laranja);
@@ -454,4 +454,88 @@ button {
     margin-top: 15px;
     text-align: left;
     color: var(--cor-laranja);
+}
+
+/* =========================
+   AGENDAMENTO RESPONSIVO
+   ========================= */
+@media (max-width: 1024px) {
+    .filtros,
+    .cards,
+    .barbeiro-conteiner,
+    .calendario,
+    .horario,
+    button {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    header > img {
+        width: 80px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .steps {
+        padding: 0 5%;
+        gap: 6px;
+    }
+    .step-circulo {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+    .div-linha {
+        width: 30px;
+    }
+    .filtros,
+    .cards,
+    .barbeiro-conteiner,
+    .calendario,
+    .horario {
+        width: 90%;
+    }
+    button {
+        width: 90%;
+    }
+    .botoes {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps {
+        padding: 0 2%;
+        gap: 4px;
+    }
+    .step-circulo {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+    span {
+        font-size: 10px;
+    }
+    .div-linha {
+        width: 20px;
+    }
+    .filtros,
+    .cards,
+    .barbeiro-conteiner,
+    .calendario,
+    .horario {
+        width: 95%;
+    }
+    button {
+        width: 95%;
+    }
+    .botoes {
+        width: 95%;
+    }
+    .filtro-btn {
+        font-size: 10px;
+        padding: 8px 4px;
+    }
 }

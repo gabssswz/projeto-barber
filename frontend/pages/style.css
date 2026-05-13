@@ -159,9 +159,6 @@ header.scrolled {
 /* Botão hamburguer (menu mobile) */
 .hamburger {
     display: none;
-    position: fixed;
-    left: 22rem;
-    z-index: 1000;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1311,7 +1308,6 @@ body.modal-open {
         width: 90%;
         max-width: 350px;
         padding: 25px;
-        height: 260px;
         margin: 0;
     }
 
@@ -1437,6 +1433,19 @@ footer > small {
     .logo-nav {
         height: 35px;
     }
+    .hero-title {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    .logo-hero {
+        width: 150px;
+    }
     footer {
         flex-direction: column;
         gap: 1.5rem;
@@ -1479,6 +1488,19 @@ footer > small {
     }
     .mobile-link {
         font-size: 18px;
+    }
+    .hero-title {
+        font-size: 2.4rem;
+        letter-spacing: 1px;
+    }
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    .logo-hero {
+        width: 120px;
     }
     .planos-wrapper {
         padding: 0 0.65rem;
