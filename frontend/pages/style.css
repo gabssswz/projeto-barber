@@ -14,7 +14,6 @@
 }
 
 html {
-    scroll-behavior: smooth;
     scroll-padding: 60px;
 }
 
@@ -1540,6 +1539,7 @@ footer > small {
     z-index: 999;
     transition: 0.3s;
     border: 2px solid #fff;
+    text-decoration: none;
 }
 
 .whatsapp-card:hover {
@@ -1547,9 +1547,10 @@ footer > small {
     box-shadow: 0 0 20px rgba(37, 211, 102, 0.9);
 }
 
-.whatsapp-card img {
-    width: 35px;
-    height: 35px;
+.whatsapp-card i {
+    font-size: 35px;
+    color: #fff;
+    line-height: 1;
 }
 
 @media (max-width: 768px) {
@@ -1560,8 +1561,7 @@ footer > small {
         right: 8px;
     }
 
-    .whatsapp-card img {
-        width: 30px;
-        height: 30px;
+    .whatsapp-card i {
+        font-size: 30px;
     }
 }

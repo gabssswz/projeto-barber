@@ -4,7 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
-    <title>Elite Barbearia </title>
+    <title>Elite Barbearia | Barbearia Premium em Três Pontas - MG</title>
+    <meta name="description" content="Elite Barbearia em Três Pontas, Minas Gerais. Cortes masculinos, barba, produtos premium e planos. Agende seu horário online!">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarberShop",
+      "name": "Elite Barbearia",
+      "description": "Barbearia premium em Três Pontas, Minas Gerais. Cortes masculinos, barba, produtos premium e planos mensais.",
+      "telephone": "+55-35-99878-7291",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nossa Senhora D'Ajuda - Centro",
+        "addressLocality": "Três Pontas",
+        "addressRegion": "MG",
+        "postalCode": "37185-090",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -21.37437180145707,
+        "longitude": -45.51088139840124
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/elitebarbeariatp/",
+        "https://wa.me/5535998787291"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços e Planos",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Degradê", "description": "Técnica precisa com transição limpa e acabamento profissional." }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Corte Moderno", "description": "Estilo atual com linhas definidas e visual contemporâneo." }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Barba", "description": "Modelagem e acabamento com presença e personalidade." }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Social Moderno", "description": "Equilíbrio perfeito entre elegância clássica e toque moderno." }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Corte Premium", "description": "Atendimento premium com técnica refinada e atenção aos detalhes." }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Corte Clássico", "description": "Visual atemporal para quem valoriza tradição e estilo." }
+          },
+          {
+            "@type": "Offer",
+            "name": "Plano Básico",
+            "price": "74.90",
+            "priceCurrency": "BRL",
+            "description": "4 cortes por mês. Inclui corte de cabelo, acabamento, raspado na máquina e 10% de desconto em serviços e produtos."
+          },
+          {
+            "@type": "Offer",
+            "name": "Plano Premium",
+            "price": "139.90",
+            "priceCurrency": "BRL",
+            "description": "8 cortes por mês. Inclui corte, acabamento, raspado, barba ilimitada, cavanhaque e 10% de desconto em serviços e produtos."
+          },
+          {
+            "@type": "Offer",
+            "name": "Plano Elite",
+            "price": "89.90",
+            "priceCurrency": "BRL",
+            "description": "4 cortes por mês. Inclui corte, barba ilimitada, cavanhaque e 10% de desconto em serviços e produtos."
+          }
+        ]
+      },
+      "priceRange": "$$"
+    }
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_CCCThNFuY8dr9tDe_7gvK68c2QXKF4I"></script>    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -39,19 +138,19 @@
                 <a href="#produtos" class="mobile-link">Produtos</a>
                 <a href="#planos" class="mobile-link">Planos</a>
                 <a href="#contato" class="mobile-link">Contato</a>
-                <a href="agendamento.html" class="btn-cta-mobile" target="_blank" rel="noopener">Agendar</a>
+                <a href="https://cashbarber.com.br/elitebarbeariatp/inicio/agendamento/novo-agendamento" class="btn-cta-mobile" target="_blank" rel="noopener">Agendar</a>
             </nav>
         </div>
     </header> 
     <main>
         <section id="home" class="hero" aria-label="Seção Hero Elite Barbearia">
-            <img src="Imagens/Logo_sem_fundo.png" alt="Logo da Elite" class="logo-hero">
+            <img src="Imagens/Logo_sem_fundo.png" alt="Logo da Elite Barbearia" class="logo-hero">
             <div class="hero-content">
                 <h1 class="hero-title"><span class="highlight">ELITE</span> BARBEARIA</h1>
                 <h2 class="hero-subtitle">Onde homens se transformam</h2>
                 <p class="hero-description">Tradição e modernidade se encontram em um espaço exclusivo dedicado ao cuidado masculino premium. Agende sua transformação.</p>
                 <div class="hero-buttons">
-                    <a href="agendamento.html" class="btn-primary" target="_blank" rel="noopener">Agendar Horário</a>
+                    <a href="https://cashbarber.com.br/elitebarbeariatp/inicio/agendamento/novo-agendamento" class="btn-primary" target="_blank" rel="noopener">Agendar Horário</a>
                     <a href="#cortes" class="btn-secondary">Ver Serviços</a>
                 </div>
             </div>
@@ -223,41 +322,41 @@
                 </div>
                 <div class="produto-cards">
                     <div class="produto-card">
-                        <img src="Imagens/imagemdefundohome.jpeg" alt="">
+                        <img src="Imagens/imagemdefundohome.jpeg" alt="Pomada Modeladora Elite Barbearia">
                         <div class="produto-info">
                             <h3 class="produto-titulo">POMADA MODELADORA</h3>
                             <p class="produto-preco">R$ 79,90</p>
-                            <a href="https://api.whatsapp.com/send/?phone=5535998420077&text=Olá, vi a Pomada Modeladora pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
+                            <a href="https://api.whatsapp.com/send/?phone=5535998787291&text=Olá, vi a Pomada Modeladora pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
                                 Ver Sobre
                             </a>
                         </div>
                     </div>
                     <div class="produto-card">
-                        <img src="Imagens/imagemdefundohome.jpeg" alt="">
+                        <img src="Imagens/imagemdefundohome.jpeg" alt="Óleo para Barba Elite Barbearia">
                         <div class="produto-info">
                             <h3 class="produto-titulo">ÓLEO PARA BARBA</h3>
                             <p class="produto-preco">R$ 59,90</p>
-                            <a href="https://api.whatsapp.com/send/?phone=5535998420077&text=Olá, vi o Óleo para Barba pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
+                            <a href="https://api.whatsapp.com/send/?phone=5535998787291&text=Olá, vi o Óleo para Barba pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
                                 Ver Sobre
                             </a>
                         </div>
                     </div>
                     <div class="produto-card">
-                        <img src="Imagens/imagemdefundohome.jpeg" alt="">
+                        <img src="Imagens/imagemdefundohome.jpeg" alt="Shampoo Premium Elite Barbearia">
                         <div class="produto-info">
                             <h3 class="produto-titulo">SHAMPOO PREMIUM</h3>
                             <p class="produto-preco">R$ 49,90</p>
-                            <a href="https://api.whatsapp.com/send/?phone=5535998420077&text=Olá, vi o Shampoo Premium pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
+                            <a href="https://api.whatsapp.com/send/?phone=5535998787291&text=Olá, vi o Shampoo Premium pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
                                 Ver Sobre
                             </a>
                         </div>
                     </div>
                     <div class="produto-card">
-                        <img src="Imagens/imagemdefundohome.jpeg" alt="">
+                        <img src="Imagens/imagemdefundohome.jpeg" alt="Balm Hidratante Elite Barbearia">
                         <div class="produto-info">
                             <h3 class="produto-titulo">BALM HIDRATANTE</h3>
                             <p class="produto-preco">R$ 54,90</p>
-                            <a href="https://api.whatsapp.com/send/?phone=5535998420077&text=Olá, vi o Balm Hidratante pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
+                            <a href="https://api.whatsapp.com/send/?phone=5535998787291&text=Olá, vi o Balm Hidratante pelo site e gostaria de adquirir!"class="whatsapp-produto" target="_blank">
                                 Ver Sobre
                             </a>
                         </div>
@@ -332,18 +431,18 @@
                     <article class="contato-card">
                         <div class="contato-card-row">
                             <div class="contato-emblem-wrap">
-                                <img src="Imagens/whatsapplogo.png" alt="WhatsApp" class="contato-emblem">
+                                <img src="Imagens/whatsapplogo.png" alt="" class="contato-emblem">
                             </div>
                             <div class="contato-card-content">
                                 <h3>WhatsApp</h3>
-                                <p>(35) 99842-0077</p>
+                                <p>(35) 99878-7291</p>
                             </div>
                         </div>
                     </article>
                     <article class="contato-card">
                         <div class="contato-card-row">
                             <div class="contato-emblem-wrap">
-                                <img src="Imagens/instagram.png" alt="Instagram" class="contato-emblem">
+                                <img src="Imagens/instagram.png" alt="" class="contato-emblem">
                             </div>
                             <div class="contato-card-content">
                                  <h3>Instagram</h3>
@@ -354,11 +453,11 @@
                     <article class="contato-card">
                         <div class="contato-card-row">
                             <div class="contato-emblem-wrap">
-                                <img src="Imagens/location.png" alt="Endereço" class="contato-emblem">
+                                <img src="Imagens/location.png" alt="" class="contato-emblem">
                             </div>
                             <div class="contato-card-content">
                                 <h3>Endereço</h3>
-                                <p>Av. Paulista, 1000<br>São Paulo - SP</p>
+                                <p>Nossa Senhora D'Ajuda - Centro<br>Três Pontas - MG, 37185-090</p>
                             </div>
                         </div>
                     </article>
@@ -368,7 +467,7 @@
     </main>
     <footer id="footer">
         <div class="brand">
-            <img src="Imagens/Logo_sem_fundo.png" alt="Logo da Elite">
+            <img src="Imagens/Logo_sem_fundo.png" alt="Logo da Elite Barbearia">
             <h4 class="secondary-text">Barbearia moderna com estilo e atitude.</h4>
         </div>
         <div class="links">
@@ -383,23 +482,24 @@
         <div>
             <h3><span class="highlight">HORÁRIOS</span></h3>
             <ul>
-                <li>Segunda a Sexta: 09h - 20h</li>
-                <li>Sábado: 09h - 18h</li>
+                <li>Segunda: 10h - 17h</li>
+                <li>Ter a Sex: 09h - 19h</li>
+                <li>Sábado: 08h - 17h</li>
                 <li>Domingo: Fechado</li>
             </ul>
         </div>
         <div>
             <h3><span class="highlight">REDES SOCIAIS</span></h3>
             <div class="social-icons">
-                <a href="https://www.instagram.com/elitebarbeariatp/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/5535998420077" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/elitebarbeariatp/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/5535998787291" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
         <small class="secondary-text">© 2026 Elite Barbearia. Todos os direitos reservados.</small>
     </footer>
     <!-- Bortao verde do WhatsApp -->
-    <a href="https://wa.me/5535998420077" class="whatsapp-card" target="_blank">
-        <img src="Imagens/whatsapp.png" alt="WhatsApp">
+    <a href="https://wa.me/5535998787291" class="whatsapp-card" target="_blank" aria-label="Contato via WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <!-- PARTE PARA O FRONTEND DA PAGINA JAVASCRIPT -->
@@ -476,8 +576,9 @@
                 });
             });
 
-            // Aplica scroll suave nos links de ancora
-            navLinks.forEach(link => {
+            // Aplica scroll suave nos links de ancora (nav + footer)
+            const allScrollLinks = document.querySelectorAll('a[href^="#"]');
+            allScrollLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
                     if (href.startsWith('#')) {
@@ -485,11 +586,11 @@
                         const target = document.querySelector(href);
                         if (target) {
                             const headerHeight = header.offsetHeight;
-                            const targetPosition = target.offsetTop - headerHeight;
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
+                            if (window.lenis) {
+                                window.lenis.scrollTo(target, { offset: -headerHeight });
+                            } else {
+                                window.scrollTo({ top: target.offsetTop - headerHeight, behavior: 'smooth' });
+                            }
                         }
                     }
                 });
