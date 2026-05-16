@@ -238,18 +238,21 @@ document.querySelectorAll('.btn-voltar').forEach(btn => {
 });
 
 function preencherResumoFinal() {
-    const total = agendamento.servicos.reduce((acc,s) => acc + s.preco,0);
+    const total = agendamento.servicos.reduce((acc,s) => acc + s.preco, 0);
 
     document.getElementById('resumo-servicos-lista').textContent = 
         agendamento.servicos.map(s => s.nome).join(', ') || '-';
-    
-    document.getElementById('resumo-data-hora').textContent = 
-        agendamento.data ? `${agendamento.dataFormatada} as ${agendamento.hora}` : '-';
+
+    document.getElementById('resumo-barbeiro-nome').textContent =
+        agendamento.barber ? agendamento.barber.nome : '-';
+
+    const dataFormatada = agendamento.data.split('-').reverse().join('/');
+    document.getElementById('resumo-data-hora').textContent =
+        agendamento.data ? `${dataFormatada} às ${agendamento.hora}` : '-';
     
     document.getElementById('resumo-valor-final').textContent = 
         `R$ ${total.toFixed(2).replace('.',',')}`;
 }
-
 const inputTelefone = document.getElementById('input-telefone');
 inputTelefone.addEventListener('input', function() {
     let v = this.value.replace(/\D/g,'').slice(0,11);
@@ -295,7 +298,7 @@ function atualizarResumo() {
 
 
 document.getElementById('btn-confirmar').addEventListener('click',async () => {
-    agendamento.nome = input.value.trim();
+    agendamento.nome = inputNome.value.trim();
     agendamento.telefone = inputTelefone.value;
 
     const btnConfirmar = document.getElementById('btn-confirmar');
@@ -311,7 +314,7 @@ document.getElementById('btn-confirmar').addEventListener('click',async () => {
             dataAgendamento: agendamento.data,
             horaAgendamento: agendamento.hora
         };
-        const res = await fetch ('/api/agendamento', {
+        const res = await fetch ('http://localhost:3000/api/agendamento', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(payload)
@@ -325,7 +328,7 @@ document.getElementById('btn-confirmar').addEventListener('click',async () => {
         mostrarErro(err.message);
 
         btnConfirmar.disabled = false;
-        btnConfirmar.innerHTML = '<i class="fa-solid fa-check></i> Confirmar Agendamento';
+        btnConfirmar.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Agendamento';
 
     }
 });
@@ -347,7 +350,7 @@ function mostrarModalSucesso() {
     //TODO: trocar o numero pro numero real da elite barbearia
     document.getElementById('btn-whatsapp').href = `https://wa.me/5535987047873?text=${msg}`
     
-    const modal = document.getElementById('modal-sucess');
+    const modal = document.getElementById('modal-sucesso');
     modal.style.display = 'flex';
 
     modal.querySelector('h2').focus();
@@ -355,35 +358,35 @@ function mostrarModalSucesso() {
 }
 
 function fecharModal() {
-    document.getElementById('modal-sucess').style.display = 'none';
+    document.getElementById('modal-sucesso').style.display = 'none';
     document.body.style.overflow = '';
 
     window.location.href = 'index.html';
 }
 
-document.getElementById('modal-overlay').addEventListener('click',fecharModal());
+document.getElementById('modal-overlay').addEventListener('click',fecharModal);
 
 document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' && document.getElementById('modal-sucess').style.display === 'flex') {
+    if(e.key === 'Escape' && document.getElementById('modal-sucesso').style.display === 'flex') {
         fecharModal();
     }
 })
 
 function mostrarErro(mensagem) {
-    const existente = document.getElementById('toast-error');
-    if (existente) existente.remove();
-    
+    // 1. Cria um div dinamicamente
     const toast = document.createElement('div');
     toast.id = 'toast-error';
-    toast.setAttribute('role', 'alert');
     toast.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${mensagem}`;
+    
+    // 2. Adiciona na página
     document.body.appendChild(toast);
 
-    toast.offsetHeight;
-    toast.classList.add('visivel')
+    // 3. Adiciona classe 'visivel' para animar a entrada
+    toast.classList.add('visivel');
 
+    // 4. Depois de 4 segundos, remove a classe (anima saída) e deleta o elemento
     setTimeout(() => {
-        toast.classList.add('visivel');
-        setTimeout(() => toast.remove(), 400)
-    }, 4000)
+        toast.classList.remove('visivel');
+        setTimeout(() => toast.remove(), 400); // espera a animação terminar
+    }, 4000);
 }
